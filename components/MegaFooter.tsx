@@ -10,7 +10,7 @@ const allNavCards = [
     { href: "/var-behandling", label: "Vår Behandling", image: "/images/nav-treatment.jpg", alt: "Vår Behandling" },
     { href: "/om-oss", label: "Om Oss", image: "/images/nav-about-us.jpg", alt: "Om Oss" },
     { href: "/vad-ar-alkoholism", label: "Vad är alkoholism?", image: "/images/nav-alcoholism.jpg", alt: "Vad är alkoholism?" },
-    { href: "/berattelser", label: "Berättelser", image: "/images/nav-stories.jpg", alt: "Berättelser" },
+    { href: "/berattelser", label: "Berättelser", image: "/images/berattelser-recensioner.jpeg", alt: "Berättelser" },
 ];
 
 export default function MegaFooter() {
