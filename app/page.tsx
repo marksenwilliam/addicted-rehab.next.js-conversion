@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import ContactSection from "@/components/ContactSection";
 
 export default function HomePage() {
   return (
@@ -53,16 +52,13 @@ export default function HomePage() {
 
           {/* Right: Hero Image Card */}
           <div className="lg:col-span-6 relative flex items-center justify-center lg:justify-end">
-            <div className="w-full max-w-md bg-brand-white border-2 border-brand-navy sketchy-box p-4 shadow-card relative z-10 transform rotate-1 transition-transform hover:rotate-0 duration-500">
-              {/* Tape effect */}
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-24 h-8 bg-brand-cream/80 border-l border-r border-brand-white/50 backdrop-blur-sm transform -rotate-2 opacity-60 shadow-sm z-20"></div>
-
+            <div className="w-full max-w-2xl bg-brand-white border-2 border-brand-navy sketchy-box p-4 shadow-card relative z-10 animate-gentle-twist">
               <div className="aspect-[4/3] bg-brand-navy overflow-hidden sketchy-box relative">
                 <Image
                   src="/images/hero-image.jpg"
                   alt="Lugnt hav i Spanien"
                   fill
-                  className="object-cover opacity-90 hover:scale-105 transition-transform duration-700"
+                  className="object-cover opacity-90"
                 />
                 <div className="absolute bottom-4 right-4 bg-brand-white/90 backdrop-blur px-3 py-1 text-[10px] font-bold uppercase tracking-widest border border-brand-navy shadow-sm">
                   La Marina, Spanien
@@ -242,7 +238,7 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-3 gap-x-8 gap-y-16">
             {/* Minnesota */}
-            <article className="group cursor-pointer">
+            <article className="group">
               <div className="relative aspect-square bg-brand-navy mb-6 border-2 border-brand-navy sketchy-box overflow-hidden shadow-sketch group-hover:shadow-sketch-hover group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all">
                 <Image
                   src="/images/how-minnesota.jpg"
@@ -250,9 +246,6 @@ export default function HomePage() {
                   fill
                   className="object-cover opacity-80 hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute top-4 right-4 bg-brand-white border-2 border-brand-navy px-2 py-1 font-bold text-[10px] tracking-widest uppercase">
-                  Steg 1
-                </div>
               </div>
               <div className="space-y-3">
                 <span className="text-[10px] font-bold text-brand-orange uppercase tracking-widest border border-brand-orange rounded-full px-3 py-0.5 inline-block">
@@ -268,7 +261,7 @@ export default function HomePage() {
             </article>
 
             {/* Terapi */}
-            <article className="group cursor-pointer">
+            <article className="group">
               <div className="relative aspect-square bg-brand-navy mb-6 border-2 border-brand-navy sketchy-box overflow-hidden shadow-sketch group-hover:shadow-sketch-hover group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all">
                 <Image
                   src="/images/how-therapy.jpg"
@@ -276,9 +269,6 @@ export default function HomePage() {
                   fill
                   className="object-cover opacity-80 hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute top-4 right-4 bg-brand-white border-2 border-brand-navy px-2 py-1 font-bold text-[10px] tracking-widest uppercase">
-                  Steg 2
-                </div>
               </div>
               <div className="space-y-3">
                 <span className="text-[10px] font-bold text-brand-orange uppercase tracking-widest border border-brand-orange rounded-full px-3 py-0.5 inline-block">
@@ -294,7 +284,7 @@ export default function HomePage() {
             </article>
 
             {/* Egentid */}
-            <article className="group cursor-pointer">
+            <article className="group">
               <div className="relative aspect-square bg-brand-navy mb-6 border-2 border-brand-navy sketchy-box overflow-hidden shadow-sketch group-hover:shadow-sketch-hover group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all">
                 <Image
                   src="/images/how-tasks.jpg"
@@ -302,9 +292,6 @@ export default function HomePage() {
                   fill
                   className="object-cover opacity-80 hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute top-4 right-4 bg-brand-white border-2 border-brand-navy px-2 py-1 font-bold text-[10px] tracking-widest uppercase">
-                  Steg 3
-                </div>
               </div>
               <div className="space-y-3">
                 <span className="text-[10px] font-bold text-brand-orange uppercase tracking-widest border border-brand-orange rounded-full px-3 py-0.5 inline-block">
@@ -327,6 +314,51 @@ export default function HomePage() {
             >
               Läs mer om vår behandling
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Varför Individuell Behandling Fungerar Section */}
+      <section className="bg-brand-cream">
+        <div className="grid lg:grid-cols-2">
+          {/* Image Side */}
+          <div className="relative aspect-square lg:aspect-auto min-h-[400px] lg:min-h-[600px]">
+            <Image
+              src="/images/individuell-behandling.jpg"
+              alt="Person looking at sunset over mountains"
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          {/* Content Side */}
+          <div className="flex items-center py-16 lg:py-24 px-6 lg:px-16">
+            <div className="max-w-xl">
+              <div className="flex items-start gap-4 mb-8">
+                <div className="w-1 h-16 bg-brand-orange flex-shrink-0 mt-1"></div>
+                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-brand-navy leading-tight">
+                  Varför individuell behandling fungerar
+                </h2>
+              </div>
+
+              <div className="space-y-6 text-brand-gray font-light leading-relaxed">
+                <p>
+                  Hos oss får du en behandling som helt och hållet fokuserar på dig och din situation. Vi arbetar inte med grupper – du får istället en egen terapeut som följer dig genom hela processen, varje dag. Det gör att vi kan gå på djupet, förstå dina mönster och hjälpa dig förändra dem på riktigt.
+                </p>
+                <p>
+                  Vi kombinerar 12-stegsprogrammet med evidensbaserade samtalsmetoder som KBT och återfallsprevention. Tillsammans bygger vi nya strategier som hjälper dig hantera sug, bryta destruktiva beteenden och skapa ett stabilt och nyktert liv.
+                </p>
+              </div>
+
+              <div className="mt-10">
+                <Link
+                  href="#contact"
+                  className="sketchy-btn bg-brand-navy/80 text-brand-white border-2 border-brand-navy/80 px-8 py-4 font-bold text-xs uppercase tracking-widest hover:bg-brand-navy transition-colors inline-block"
+                >
+                  Kontakta Oss
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -386,64 +418,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Navigation Grid Section */}
-      <section className="py-24 bg-brand-white border-t-2 border-brand-navy/10">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl text-brand-navy">Utforska mer</h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Nav Card 1 */}
-            <Link href="/var-behandling" className="group">
-              <div className="relative aspect-[4/3] border-2 border-brand-navy sketchy-box overflow-hidden shadow-sketch group-hover:shadow-sketch-hover group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all">
-                <Image src="/images/nav-treatment.jpg" alt="Vår Behandling" fill className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 to-transparent"></div>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <span className="text-brand-white font-serif text-xl">Vår Behandling</span>
-                </div>
-              </div>
-            </Link>
-
-            {/* Nav Card 2 */}
-            <Link href="/om-oss" className="group">
-              <div className="relative aspect-[4/3] border-2 border-brand-navy sketchy-box overflow-hidden shadow-sketch group-hover:shadow-sketch-hover group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all">
-                <Image src="/images/nav-about-us.jpg" alt="Om Oss" fill className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 to-transparent"></div>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <span className="text-brand-white font-serif text-xl">Om Oss</span>
-                </div>
-              </div>
-            </Link>
-
-            {/* Nav Card 3 */}
-            <Link href="/vad-ar-alkoholism" className="group">
-              <div className="relative aspect-[4/3] border-2 border-brand-navy sketchy-box overflow-hidden shadow-sketch group-hover:shadow-sketch-hover group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all">
-                <Image src="/images/nav-alcoholism.jpg" alt="Vad är alkoholism?" fill className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 to-transparent"></div>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <span className="text-brand-white font-serif text-xl">Vad är alkoholism?</span>
-                </div>
-              </div>
-            </Link>
-
-            {/* Nav Card 4 */}
-            <Link href="/berattelser" className="group">
-              <div className="relative aspect-[4/3] border-2 border-brand-navy sketchy-box overflow-hidden shadow-sketch group-hover:shadow-sketch-hover group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all">
-                <Image src="/images/nav-stories.jpg" alt="Berättelser" fill className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 to-transparent"></div>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <span className="text-brand-white font-serif text-xl">Berättelser</span>
-                </div>
-              </div>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <ContactSection />
     </>
   );
 }

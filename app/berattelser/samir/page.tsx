@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Metadata } from "next";
-import ContactSection from "@/components/ContactSection";
 
 export const metadata: Metadata = {
     title: "Samirs berättelse | Addicted Rehab",
@@ -62,8 +61,6 @@ export default function SamirStoryPage() {
                     </div>
                 </div>
             </article>
-
-            <ContactSection />
         </>
     );
 }

@@ -127,3 +127,17 @@ body {
     transform: scaleY(1);
   }
 }
+
+/* Gentle Twist Animation for Hero Image */
+@keyframes gentleTwist {
+  0%, 100% {
+    transform: rotate(1.5deg);
+  }
+  50% {
+    transform: rotate(-1.5deg);
+  }
+}
+
+.animate-gentle-twist {
+  animation: gentleTwist 8s ease-in-out infinite;
+}

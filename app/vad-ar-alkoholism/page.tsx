@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Metadata } from "next";
-import ContactSection from "@/components/ContactSection";
 
 export const metadata: Metadata = {
     title: "Vad är alkoholism? | Addicted Rehab",
@@ -153,9 +152,6 @@ export default function VadArAlkoholismPage() {
                     </div>
                 </div>
             </section>
-
-            {/* Contact Section */}
-            <ContactSection />
         </>
     );
 }

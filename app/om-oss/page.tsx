@@ -180,35 +180,99 @@ export default function OmOssPage() {
                                 vändpunkt för mig. Kunskapen tog bort mycket av skammen och gav mig ett
                                 sammanhang för det jag hade levt i under så lång tid.
                             </p>
-                            <p>
+                            <p className="mb-6">
                                 Parallellt började jag gå på AA-möten, till en början två gånger om dagen under
                                 de första tre månaderna. Mötena blev en stabil grund i min vardag. Där mötte jag
                                 människor som förstod exakt vad jag gick igenom, utan förklaringar och utan
-                                dömande.
+                                dömande. Gemenskapen, igenkänningen och strukturen gjorde att jag inte längre var ensam i mitt beroende.
+                            </p>
+                            <p className="mb-6">
+                                Efter en tid sökte jag in till en treårig utbildning till A-terapeut och blev antagen. Den utbildningen gav mig oerhört mycket insikt – både professionellt och personligt. Ju mer jag förstod om beroendets mekanismer, desto mindre makt fick alkoholen över mig. Det kändes inte längre som en ständig kamp; det blev faktiskt lätt att avstå från alkohol.
+                            </p>
+                            <p className="mb-6">
+                                AA-mötena fortsatte att vara en viktig del av min återhämtning. De hjälpte mig att hålla mig ärlig, närvarande och ödmjuk inför att beroendet alltid behöver tas på allvar, även när livet fungerar bra.
+                            </p>
+                            <p>
+                                För mig var det alltså kombinationen av kunskap, gemenskap och långsiktigt arbete med mig själv som fungerade. Inte en snabb lösning – utan ett nytt sätt att leva.
+                            </p>
+                        </div>
+
+                        {/* Quote Section */}
+                        <div className="bg-brand-navy text-brand-cream p-12 rounded-2xl text-center my-16">
+                            <div className="w-16 h-16 mx-auto mb-8 text-brand-orange">
+                                <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full rotate-180">
+                                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                                </svg>
+                            </div>
+                            <p className="font-serif text-3xl md:text-4xl italic leading-tight">
+                                JAG VET HUR DET KÄNNS,<br /> FÖR JAG HAR VARIT DÄR SJÄLV
+                            </p>
+                        </div>
+
+                        {/* Part 3 */}
+                        <div>
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="w-12 h-12 rounded-full bg-brand-navy flex items-center justify-center text-brand-orange font-bold text-xl">
+                                    3
+                                </div>
+                                <h3 className="font-serif text-3xl text-brand-orange">Utbildning</h3>
+                            </div>
+                            <p className="mb-6">
+                                Att gå från att vara den som behövde hjälp till att själv hjälpa andra var både ödmjukande och meningsfullt.
+                            </p>
+                            <p className="mb-6">
+                                I början kände jag en stor respekt – nästan en försiktighet – inför rollen. Jag visste hur sårbar man är när man söker hjälp, eftersom jag själv hade varit där. Det gjorde att jag tog uppgiften på största allvar. Jag bar med mig en ständig medvetenhet om hur mycket mod det krävs för att erkänna sitt beroende och be om stöd.
+                            </p>
+                            <p className="mb-6">
+                                Samtidigt upplevde jag att mina egna erfarenheter blev en styrka. Jag behövde inte gissa hur det kunde kännas för någon som satt mittemot mig; jag kände igen rädslan, skammen och hopplösheten. Det skapade en genuin närvaro och en tillit som inte går att läsa sig till.
+                            </p>
+                            <p className="mb-6">
+                                Det var också läkande på ett personligt plan. Att kunna använda min egen resa till något konstruktivt gav mening åt det jag hade gått igenom. Det som tidigare varit ett misslyckande i mitt liv blev i stället en resurs.
+                            </p>
+                            <p className="mb-6">
+                                Samtidigt lärde jag mig snabbt vikten av ödmjukhet. Att hjälpa andra handlar inte om att ha svaren, utan om att kunna lyssna, möta människor där de är och påminna sig om att återhämtning är en pågående process – även för mig.
+                            </p>
+                            <p>
+                                Att få vara en del av någon annans tillfrisknande är inget man vänjer sig vid. Det är ett förtroende, och ett ansvar, som jag bär med stor respekt.
+                            </p>
+                        </div>
+
+                        {/* Part 4 */}
+                        <div>
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="w-12 h-12 rounded-full bg-brand-navy flex items-center justify-center text-brand-orange font-bold text-xl">
+                                    4
+                                </div>
+                                <h3 className="font-serif text-3xl text-brand-orange">Varför jobba som beroendeterapeut</h3>
+                            </div>
+                            <p className="mb-6">
+                                Jag valde att utbilda mig till beroendeterapeut för att jag vet vilket helvete det kan vara att leva i ett beroende. Jag vet hur ensam, hopplös och fast man kan känna sig – och hur svårt det är att ta steget att be om hjälp. Efter min egen resa kände jag ett starkt ansvar att använda mina erfarenheter och min kunskap till att hjälpa andra att hitta en väg ut, och visa att förändring faktiskt är möjlig.
+                            </p>
+                            
+                            <h4 className="font-bold text-brand-navy text-xl mb-4">Egen erfarenhet i terapeutrollen</h4>
+                            <p className="mb-6">
+                                Min egen erfarenhet av beroende gör att jag kan möta klienter med äkta förståelse och empati. Jag vet hur det känns att vara fast, rädd och skamsen, och det gör att jag kan lyssna utan att döma. Samtidigt ger det mig insikt i vilka strategier och stöd som faktiskt kan fungera, vilket gör mitt arbete både mer konkret och meningsfullt.
+                            </p>
+                            
+                            <h4 className="font-bold text-brand-navy text-xl mb-4">Varför jag hjälper andra idag</h4>
+                            <p className="mb-6">
+                                Att gå från att behöva hjälp till att själv vara den som stöttar är djupt meningsfullt. Min styrka som terapeut ligger inte i att jag har alla svar, utan i att jag känner igen rädslan och hopplösheten i dina ögon. Jag behöver inte gissa hur du mår – jag bär med mig samma erfarenhet.
+                            </p>
+                            <p className="mb-6">
+                                Mitt löfte till dig: Jag möter dig med äkta empati och utan dömande. Jag vet att återhämtning aldrig är en rak väg, men jag vet också att förändring är möjlig, oavsett hur djupt du har fallit.
+                            </p>
+                            
+                            <h4 className="font-bold text-brand-navy text-xl mb-4">Vad jag önskar någon hade sagt till mig</h4>
+                            <p className="mb-6">
+                                Jag önskar att någon hade sagt till mig att jag inte var trasig eller svag – utan sjuk, och att det fanns hjälp som faktiskt fungerade. Att jag inte behövde klara det själv, och att det inte var för sent. Framför allt önskar jag att någon hade sagt att ett liv utan alkohol inte bara är möjligt, utan kan bli bättre än jag någonsin trodde.
+                            </p>
+                            
+                            <h4 className="font-bold text-brand-navy text-xl mb-4">Återhämtning alltid är individuell och aldrig en rak väg</h4>
+                            <p>
+                                Jag har lärt mig att återhämtning alltid är individuell och aldrig en rak väg. Varje klient är unik, med sin egen historia, rädslor och utmaningar, och det är något jag bär med mig i varje möte. Min egen resa har gett mig ödmjukhet och tålamod – jag vet hur svårt det kan kännas att ta de första stegen, och hur lätt det är att tappa hoppet. Samtidigt har jag också sett att förändring är möjlig. Den insikten försöker jag förmedla, steg för steg, till alla jag möter, så att de inte känner sig ensamma i processen.
                             </p>
                         </div>
                     </div>
-                </div>
-            </section>
-
-            {/* Footer Quote Section */}
-            <section className="py-24 bg-brand-navy text-brand-cream text-center relative overflow-hidden">
-                <div
-                    className="absolute inset-0 opacity-10"
-                    style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23e8a838' fill-opacity='1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='1'/%3E%3C/g%3E%3C/svg%3E")`,
-                    }}
-                ></div>
-
-                <div className="max-w-4xl mx-auto px-6 relative z-10">
-                    <div className="w-16 h-16 mx-auto mb-8 text-brand-orange">
-                        <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full rotate-180">
-                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                        </svg>
-                    </div>
-                    <p className="font-serif text-3xl md:text-5xl italic leading-tight">
-                        &quot;JAG VET HUR DET KÄNNS,<br /> FÖR JAG HAR VARIT DÄR SJÄLV&quot;
-                    </p>
                 </div>
             </section>
 

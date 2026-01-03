@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
-import ContactSection from "@/components/ContactSection";
 
 export const metadata: Metadata = {
     title: "Berättelser & Recensioner | Addicted Rehab",
@@ -138,9 +137,6 @@ export default function BerattelerPage() {
                     </Link>
                 </div>
             </section>
-
-            {/* Contact Section */}
-            <ContactSection />
         </>
     );
 }

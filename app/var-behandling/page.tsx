@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
-import ContactSection from "@/components/ContactSection";
+import FAQSection from "@/components/FAQAccordion";
 
 export const metadata: Metadata = {
     title: "Vår Behandling | Addicted Rehab",
@@ -37,18 +37,15 @@ export default function VarBehandlingPage() {
                     <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
                         {/* Image Left */}
                         <div className="relative group">
-                            <div className="absolute -inset-4 border-2 border-brand-orange sketchy-box transform rotate-1 opacity-20"></div>
-                            <div className="border-2 border-brand-navy sketchy-box p-3 bg-white relative z-10 transform -rotate-1 transition-transform group-hover:rotate-0">
+                            <div className="absolute inset-0 border-2 border-brand-orange sketchy-box transform -rotate-2 scale-105 opacity-20"></div>
+                            <div className="relative sketchy-box overflow-hidden border-2 border-brand-navy shadow-sketch transform rotate-1 transition-transform group-hover:rotate-0">
                                 <Image
-                                    src="/images/hero-image.jpg"
-                                    alt="La Marina, Spanien"
+                                    src="/images/vår-behandling 1x1.jpg"
+                                    alt="Arne Stålberg"
                                     width={600}
-                                    height={450}
-                                    className="w-full h-auto rounded-sm"
+                                    height={600}
+                                    className="w-full h-[600px] object-cover transition-all duration-700"
                                 />
-                                <div className="absolute bottom-6 right-6 bg-brand-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest border border-brand-navy shadow-sm transform rotate-2">
-                                    La Marina, Spanien
-                                </div>
                             </div>
                         </div>
 
@@ -89,13 +86,14 @@ export default function VarBehandlingPage() {
 
                         {/* Image Right */}
                         <div className="order-1 lg:order-2 relative group">
-                            <div className="border-2 border-brand-navy sketchy-box p-3 bg-white relative z-10 transform rotate-1 transition-transform group-hover:rotate-0">
+                            <div className="absolute inset-0 border-2 border-brand-orange sketchy-box transform rotate-2 scale-105 opacity-20"></div>
+                            <div className="relative sketchy-box overflow-hidden border-2 border-brand-navy shadow-sketch transform -rotate-1 transition-transform group-hover:rotate-0">
                                 <Image
-                                    src="/images/portrait_arne.jpg"
-                                    alt="Arne Stålberg"
+                                    src="/images/vår-behandling%201x1%20%232.png"
+                                    alt="Jan Hellberg"
                                     width={600}
-                                    height={400}
-                                    className="w-full h-[400px] object-cover rounded-sm"
+                                    height={600}
+                                    className="w-full h-[600px] object-cover transition-all duration-700"
                                 />
                             </div>
                         </div>
@@ -104,47 +102,119 @@ export default function VarBehandlingPage() {
             </section>
 
             {/* Individuell Behandling Benefits */}
-            <section className="py-24 bg-brand-navy text-brand-white relative overflow-hidden">
-                <div
-                    className="absolute inset-0 opacity-10"
-                    style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23e8a838' fill-opacity='1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='1'/%3E%3C/g%3E%3C/svg%3E")`,
-                    }}
-                ></div>
+            <section className="py-24 px-6 bg-brand-navy relative">
+                {/* Decorative blurs */}
+                <div className="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-brand-orange/5 rounded-full blur-3xl pointer-events-none"></div>
+                <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-60 h-60 bg-brand-orange/5 rounded-full blur-3xl pointer-events-none"></div>
 
-                <div className="container mx-auto px-6 relative z-10 max-w-4xl">
-                    <div className="text-center mb-16">
-                        <h2 className="font-serif text-4xl md:text-5xl mb-6">Individuell behandling – på riktigt</h2>
-                        <p className="text-xl text-brand-cream/80 max-w-2xl mx-auto">
-                            Vi arbetar endast med en klient åt gången. Effekten av detta är:
-                        </p>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-6">
-                        {[
-                            { icon: "check", title: "Fokus på dig", desc: "Fokus på dina unika mönster och behov." },
-                            { icon: "lock", title: "Öppenhet", desc: "Samtal där du vågar vara helt öppen." },
-                            { icon: "clock", title: "Ditt tempo", desc: "Ett tempo som följer din förmåga, inte en gruppstruktur." },
-                            { icon: "wrench", title: "Verktyg", desc: "Verktyg som fungerar i just din vardag." },
-                        ].map((item, i) => (
-                            <div key={i} className="bg-brand-white/5 border border-brand-cream/10 p-6 rounded-lg backdrop-blur-sm hover:bg-brand-white/10 transition-colors">
-                                <div className="w-8 h-8 text-brand-orange mb-4">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-full h-full">
-                                        {item.icon === "check" && <path d="M20 6L9 17l-5-5" />}
-                                        {item.icon === "lock" && <><rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></>}
-                                        {item.icon === "clock" && <><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></>}
-                                        {item.icon === "wrench" && <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />}
-                                    </svg>
-                                </div>
-                                <h3 className="font-bold text-lg mb-2">{item.title}</h3>
-                                <p className="text-brand-cream/70">{item.desc}</p>
+                <div className="max-w-7xl mx-auto w-full relative z-10">
+                    <div className="flex flex-col lg:flex-row gap-16">
+                        {/* Left Column - Text */}
+                        <div className="lg:w-1/3 flex flex-col justify-center space-y-8">
+                            <div className="space-y-4">
+                                <span className="text-brand-orange font-medium tracking-wider uppercase text-sm border-b-2 border-brand-orange inline-block pb-1">
+                                    Behandlingsmetodik
+                                </span>
+                                <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-brand-white leading-[1.1] tracking-tight">
+                                    Individuell<br />behandling
+                                </h2>
+                                <p className="text-brand-cream/70 text-lg leading-relaxed max-w-md">
+                                    Vi arbetar endast med en klient åt gången för att säkerställa maximalt fokus och resultat. Effekten av detta arbetssätt är djupgående.
+                                </p>
                             </div>
-                        ))}
-                    </div>
 
-                    <p className="text-center text-brand-orange mt-12 font-serif text-xl italic">
-                        &quot;Det är behandling utan störningsmoment och utan jämförelser.&quot;
-                    </p>
+                            <div className="pt-4 border-l-4 border-brand-orange pl-6">
+                                <blockquote className="text-xl md:text-2xl font-serif text-brand-white italic leading-snug">
+                                    &quot;Det är behandling utan störningsmoment och utan jämförelser.&quot;
+                                </blockquote>
+                            </div>
+
+                            <div className="pt-4">
+                                <Link
+                                    href="/var-behandling"
+                                    className="group flex items-center gap-3 text-brand-white font-medium hover:text-brand-orange transition-colors duration-300"
+                                >
+                                    <span>Läs mer om vårt arbetssätt</span>
+                                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </Link>
+                            </div>
+                        </div>
+
+                        {/* Right Column - Cards */}
+                        <div className="lg:w-2/3">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                {/* Card 1 - Fokus på dig */}
+                                <div className="group bg-brand-white/5 border-2 border-brand-cream/20 sketchy-box p-8 transition-all duration-300 hover:border-brand-orange/50 hover:shadow-sketch relative overflow-hidden transform rotate-1 hover:rotate-0">
+                                    <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-brand-orange/10 to-transparent -mr-4 -mt-4 transition-transform group-hover:scale-110 duration-500" style={{ borderRadius: '0 0 0 100%' }}></div>
+                                    <div className="relative w-14 h-14 mb-6">
+                                        <div className="absolute inset-0 bg-brand-orange/30 sketchy-box transform translate-x-1 translate-y-1"></div>
+                                        <div className="relative w-full h-full bg-brand-white/10 border-2 border-brand-orange/50 sketchy-box flex items-center justify-center group-hover:bg-brand-orange/20 transition-colors duration-300">
+                                            <svg className="w-7 h-7 text-brand-orange" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <h3 className="text-xl font-bold text-brand-white mb-3">Fokus på dig</h3>
+                                    <p className="text-brand-cream/70 leading-relaxed">
+                                        Fokus på dina unika mönster och behov. Din resa formas helt efter dina förutsättningar utan kompromisser.
+                                    </p>
+                                </div>
+
+                                {/* Card 2 - Öppenhet */}
+                                <div className="group bg-brand-white/5 border-2 border-brand-cream/20 sketchy-box p-8 transition-all duration-300 hover:border-brand-orange/50 hover:shadow-sketch relative overflow-hidden transform -rotate-1 hover:rotate-0">
+                                    <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-brand-orange/10 to-transparent -mr-4 -mt-4 transition-transform group-hover:scale-110 duration-500" style={{ borderRadius: '0 0 0 100%' }}></div>
+                                    <div className="relative w-14 h-14 mb-6">
+                                        <div className="absolute inset-0 bg-brand-orange/30 sketchy-box transform translate-x-1 translate-y-1"></div>
+                                        <div className="relative w-full h-full bg-brand-white/10 border-2 border-brand-orange/50 sketchy-box flex items-center justify-center group-hover:bg-brand-orange/20 transition-colors duration-300">
+                                            <svg className="w-7 h-7 text-brand-orange" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5-2.28 0-4.27 1.54-4.84 3.75-.14.54.18 1.08.72 1.22.53.14 1.08-.18 1.22-.72C9.44 3.93 10.63 3 12 3c1.65 0 3 1.35 3 3v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm0 12H6V10h12v10z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <h3 className="text-xl font-bold text-brand-white mb-3">Öppenhet</h3>
+                                    <p className="text-brand-cream/70 leading-relaxed">
+                                        Samtal där du vågar vara helt öppen. En trygg miljö där sekretess och förtroende är grundstenarna.
+                                    </p>
+                                </div>
+
+                                {/* Card 3 - Ditt tempo */}
+                                <div className="group bg-brand-white/5 border-2 border-brand-cream/20 sketchy-box p-8 transition-all duration-300 hover:border-brand-orange/50 hover:shadow-sketch relative overflow-hidden transform -rotate-[0.5deg] hover:rotate-0">
+                                    <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-brand-orange/10 to-transparent -mr-4 -mt-4 transition-transform group-hover:scale-110 duration-500" style={{ borderRadius: '0 0 0 100%' }}></div>
+                                    <div className="relative w-14 h-14 mb-6">
+                                        <div className="absolute inset-0 bg-brand-orange/30 sketchy-box transform translate-x-1 translate-y-1"></div>
+                                        <div className="relative w-full h-full bg-brand-white/10 border-2 border-brand-orange/50 sketchy-box flex items-center justify-center group-hover:bg-brand-orange/20 transition-colors duration-300">
+                                            <svg className="w-7 h-7 text-brand-orange" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <h3 className="text-xl font-bold text-brand-white mb-3">Ditt tempo</h3>
+                                    <p className="text-brand-cream/70 leading-relaxed">
+                                        Ett tempo som följer din förmåga, inte en gruppstruktur. Vi accelererar när du är redo och pausar när du behöver.
+                                    </p>
+                                </div>
+
+                                {/* Card 4 - Verktyg */}
+                                <div className="group bg-brand-white/5 border-2 border-brand-cream/20 sketchy-box p-8 transition-all duration-300 hover:border-brand-orange/50 hover:shadow-sketch relative overflow-hidden transform rotate-[0.75deg] hover:rotate-0">
+                                    <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-brand-orange/10 to-transparent -mr-4 -mt-4 transition-transform group-hover:scale-110 duration-500" style={{ borderRadius: '0 0 0 100%' }}></div>
+                                    <div className="relative w-14 h-14 mb-6">
+                                        <div className="absolute inset-0 bg-brand-orange/30 sketchy-box transform translate-x-1 translate-y-1"></div>
+                                        <div className="relative w-full h-full bg-brand-white/10 border-2 border-brand-orange/50 sketchy-box flex items-center justify-center group-hover:bg-brand-orange/20 transition-colors duration-300">
+                                            <svg className="w-7 h-7 text-brand-orange" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <h3 className="text-xl font-bold text-brand-white mb-3">Verktyg</h3>
+                                    <p className="text-brand-cream/70 leading-relaxed">
+                                        Konkreta verktyg som fungerar i just din vardag. Strategier anpassade för dina utmaningar och mål.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -209,40 +279,67 @@ export default function VarBehandlingPage() {
             </section>
 
             {/* Methodology */}
-            <section className="py-24 bg-brand-white relative border-y-2 border-brand-navy/10">
-                <div className="container mx-auto px-6 max-w-4xl text-center">
-                    <div className="inline-block border-2 border-brand-orange px-4 py-1 mb-8 rounded-full transform -rotate-2">
-                        <span className="font-bold text-xs tracking-widest text-brand-navy uppercase">Metodik</span>
+            <section className="py-24 bg-brand-cream relative">
+                <div className="max-w-4xl mx-auto px-6">
+                    {/* Badge */}
+                    <div className="flex justify-center mb-8">
+                        <span className="inline-flex items-center px-5 py-1.5 rounded-full text-xs font-semibold tracking-[0.2em] uppercase border border-brand-orange/50 text-brand-navy bg-brand-white shadow-sm">
+                            Metodik
+                        </span>
                     </div>
 
-                    <h2 className="font-serif text-4xl md:text-5xl text-brand-navy mb-8">
+                    {/* Main Heading */}
+                    <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] leading-tight text-center font-serif text-brand-navy mb-12 max-w-3xl mx-auto">
                         Vi jobbar med Individuell 12-stegsbehandling enligt Minnesotametoden
                     </h2>
 
-                    <div className="text-left prose prose-lg prose-gray mx-auto mb-12">
-                        <h3 className="text-brand-navy font-serif">Vad är tolvstegsprogrammet?</h3>
+                    {/* Content */}
+                    <div className="max-w-3xl mx-auto space-y-8 text-lg md:text-xl leading-relaxed text-brand-gray">
                         <p>
-                            Att kämpa mot alkoholism och alkoholberoende kan vara en utmanande resa. Men det är viktigt att veta
-                            att du inte är ensam. På vår klinik arbetar vi med individuell 12-stegsbehandling enligt Minnesotametoden
-                            för att hjälpa människor att återfå kontrollen över sina liv.
+                            Att kämpa mot alkoholism och alkoholberoende kan vara en utmanande resa. Men det är viktigt att veta att du inte är ensam. På vår klinik arbetar vi med individuell 12-stegsbehandling enligt Minnesotametoden för att hjälpa människor att återfå kontrollen över sina liv.
                         </p>
+
+                        <div className="pt-2">
+                            <h3 className="text-2xl font-semibold text-brand-navy mb-4 font-serif italic">
+                                Vad är tolvstegsprogrammet?
+                            </h3>
+                            <p>
+                                12-stegsprogrammet har sina rötter inom självhjälpsrörelsen Anonyma Alkoholister (AA), men det är inte identiskt med AA. Det betraktas som en behandlingsmetod för alkoholism och följer en manual med olika steg.
+                            </p>
+                        </div>
+
                         <p>
-                            12-stegsprogrammet har sina rötter inom självhjälpsrörelsen Anonyma Alkoholister (AA), men det är inte
-                            identiskt med AA. Det betraktas som en behandlingsmetod för alkoholism och följer en manual med olika steg.
+                            Kärnan i 12-stegsprogrammet är erkännandet av att man har förlorat kontrollen över sitt drickande och att man behöver hjälp för att bryta mönstret. Genom att arbeta sig igenom stegen, får individen verktyg för att hantera känslor, bygga upp relationer och skapa en meningsfull tillvaro utan alkohol.
+                        </p>
+
+                        <p>
+                            På vår klinik anpassar vi behandlingen efter varje individs unika behov och förutsättningar. Vi tror på att varje människa har potential att förändras och att tillfrisknande är möjligt för alla.
                         </p>
                     </div>
 
-                    <div className="bg-brand-navy/5 p-8 rounded-2xl sketchy-box inline-block">
-                        <p className="font-bold text-brand-navy mb-4">Ring oss idag, så kan vi prata om din situation</p>
-                        <a
-                            href="tel:0732520358"
-                            className="sketchy-btn bg-brand-orange text-brand-navy border-2 border-brand-navy px-8 py-4 font-bold text-lg uppercase tracking-widest hover:bg-brand-white transition-colors shadow-sketch inline-flex items-center gap-3"
-                        >
-                            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                            </svg>
-                            073 - 252 03 58
-                        </a>
+                    {/* Call to Action Card */}
+                    <div className="mt-20 max-w-xl mx-auto">
+                        <div className="bg-brand-white border-2 border-brand-navy/10 sketchy-box p-8 md:p-12 text-center relative overflow-hidden shadow-sketch">
+                            {/* Dotted pattern background */}
+                            <div 
+                                className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none" 
+                                style={{ backgroundImage: 'radial-gradient(#0e1626 1px, transparent 1px)', backgroundSize: '20px 20px' }}
+                            ></div>
+                            
+                            <h3 className="text-xl font-medium text-brand-navy mb-8 relative z-10 font-serif italic">
+                                Ring oss idag, så kan vi prata om din situation
+                            </h3>
+                            
+                            <a
+                                href="tel:0732520358"
+                                className="inline-flex items-center justify-center gap-3 bg-brand-orange text-brand-navy font-bold py-4 px-10 text-lg sketchy-btn border-2 border-brand-navy shadow-sketch hover:shadow-sketch-hover hover:translate-x-[-2px] hover:translate-y-[-2px] relative z-10 group transition-all"
+                            >
+                                <svg className="w-6 h-6 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg>
+                                <span className="tracking-wider">073 - 252 03 58</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -305,63 +402,7 @@ export default function VarBehandlingPage() {
             </section>
 
             {/* FAQ Section */}
-            <section className="py-24 bg-brand-white">
-                <div className="container mx-auto px-6 max-w-4xl">
-                    <h2 className="font-serif text-4xl text-center text-brand-navy mb-4">Vanliga frågor och svar</h2>
-                    <p className="text-center text-brand-gray mb-16 max-w-2xl mx-auto">
-                        Här finns svar på vanliga frågor för dig som känner dig tveksam om antingen behandlingen eller de praktiska bitarna.
-                    </p>
-
-                    <div className="grid md:grid-cols-2 gap-12 items-start">
-                        {/* Treatment FAQ */}
-                        <div className="space-y-4">
-                            <h3 className="font-bold text-sm tracking-widest uppercase text-brand-orange mb-6">Frågor om behandlingen</h3>
-                            {[
-                                { q: "Behandlar ni bara alkoholism?", a: "Kontakta oss för mer information om våra behandlingsområden." },
-                                { q: "Kan jag verkligen göra en förändring på bara 30 dagar?", a: "30 dagar ger en stark grund. Med rätt verktyg och uppföljning kan en månad vara starten på ett helt nytt liv." },
-                                { q: "Kommer vi att ha kontakt efter behandlingen?", a: "Ja, utvecklingssamtal och uppföljning ingår." },
-                            ].map((item, i) => (
-                                <details key={i} className="group bg-brand-cream/30 p-4 rounded-lg cursor-pointer">
-                                    <summary className="font-bold text-brand-navy flex justify-between items-center list-none">
-                                        {item.q}
-                                        <svg className="w-5 h-5 transform group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <polyline points="6 9 12 15 18 9" />
-                                        </svg>
-                                    </summary>
-                                    <p className="mt-4 text-brand-gray text-sm">{item.a}</p>
-                                </details>
-                            ))}
-                        </div>
-
-                        {/* Practical FAQ */}
-                        <div className="space-y-4">
-                            <h3 className="font-bold text-sm tracking-widest uppercase text-brand-orange mb-6">Praktiska frågor</h3>
-                            {[
-                                { q: "Får jag ta med husdjur?", a: "Ja, husdjur är ofta välkomna hos oss. Kontakta oss för detaljer." },
-                                { q: "Hur tar jag mig från flygplatsen?", a: "Vi hjälper till med transfer från flygplatsen till kliniken." },
-                                { q: "Vad kostar det?", a: "Kostnaden är betydligt lägre än i Sverige för motsvarande kvalitet. Ring oss för prisuppgift." },
-                            ].map((item, i) => (
-                                <details key={i} className="group bg-brand-cream/30 p-4 rounded-lg cursor-pointer">
-                                    <summary className="font-bold text-brand-navy flex justify-between items-center list-none">
-                                        {item.q}
-                                        <svg className="w-5 h-5 transform group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <polyline points="6 9 12 15 18 9" />
-                                        </svg>
-                                    </summary>
-                                    <p className="mt-4 text-brand-gray text-sm">{item.a}</p>
-                                </details>
-                            ))}
-                        </div>
-                    </div>
-
-                    <p className="text-center text-xs text-brand-gray mt-12 italic">
-                        Svar på fler frågor fås vid kontakt.
-                    </p>
-                </div>
-            </section>
-
-            {/* Contact Section */}
-            <ContactSection />
+            <FAQSection />
         </>
     );
 }
