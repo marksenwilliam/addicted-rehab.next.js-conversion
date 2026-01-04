@@ -103,6 +103,7 @@ export default function RootLayout({
           data-cbid="322f89ec-5b98-45b0-9790-7ebb24f693b5"
           data-blockingmode="auto"
           type="text/javascript"
+          async
         />
         {/* Google Analytics */}
         <script
