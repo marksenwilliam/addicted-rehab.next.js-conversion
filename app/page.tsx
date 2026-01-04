@@ -1,131 +1,152 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import AnimateOnScroll, { StaggerContainer, StaggerItem } from "@/components/AnimateOnScroll";
 
 export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <header id="hero" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+      <header id="hero" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-brand-section-bg">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-16 relative z-10">
           {/* Left: Content */}
           <div className="lg:col-span-6 flex flex-col justify-center items-start space-y-8">
             {/* Hand-drawn label */}
-            <div className="relative inline-block mb-2">
-              <div className="absolute inset-0 border-2 border-brand-orange sketchy-oval transform -rotate-2"></div>
-              <span className="relative block px-5 py-2 text-[10px] font-bold tracking-[0.15em] text-brand-navy uppercase">
-                Privat Rehab i Spanien
-              </span>
-            </div>
+            <AnimateOnScroll animation="fadeUp" delay={0}>
+              <div className="relative inline-block mb-2">
+                <div className="absolute inset-0 border-2 border-brand-orange sketchy-oval transform -rotate-2"></div>
+                <span className="relative block px-5 py-2 text-[10px] font-bold tracking-[0.15em] text-brand-navy uppercase">
+                  Privat Rehab i Spanien
+                </span>
+              </div>
+            </AnimateOnScroll>
 
-            <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-medium text-brand-navy leading-[1.05] tracking-tight">
-              Individuell <br />
-              <span className="marker-highlight inline-block px-1 transform -rotate-1">behandling</span> <br />
-              för alkoholberoende.
-            </h1>
+            <AnimateOnScroll animation="fadeUp" delay={0.1}>
+              <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-medium text-brand-header-text leading-[1.05] tracking-tight">
+                Individuell <br />
+                <span className="marker-highlight inline-block px-1 transform -rotate-1">behandling</span> <br />
+                för alkoholberoende.
+              </h1>
+            </AnimateOnScroll>
 
-            <p className="text-lg text-brand-gray font-sans font-light leading-relaxed max-w-lg">
-              Vi är en svensk behandlingsklinik baserad i{" "}
-              <span className="font-bold text-brand-navy border-b-2 border-brand-peach border-dashed">
-                La Marina, Spanien
-              </span>
-              , som erbjuder professionell och helt individuell behandling.
-            </p>
+            <AnimateOnScroll animation="fadeUp" delay={0.2}>
+              <p className="text-lg text-brand-gray font-sans font-light leading-relaxed max-w-lg">
+                Vi är en svensk behandlingsklinik baserad i{" "}
+                <span className="font-bold text-brand-navy border-b-2 border-brand-peach border-dashed">
+                  La Marina, Spanien
+                </span>
+                , som erbjuder professionell och helt individuell behandling.
+              </p>
+            </AnimateOnScroll>
 
-            <div className="flex flex-wrap items-center gap-6 pt-4">
-              <Link
-                href="#contact"
-                className="sketchy-btn bg-brand-orange text-brand-navy border-2 border-brand-navy px-8 py-4 font-bold text-xs uppercase tracking-widest shadow-sketch hover:shadow-sketch-hover hover:translate-x-[2px] hover:translate-y-[2px] flex items-center gap-3"
-              >
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-                Kontakta Oss
-              </Link>
-              <Link
-                href="#how-we-work"
-                className="sketchy-btn bg-transparent text-brand-navy border-2 border-brand-navy px-8 py-4 font-bold text-xs uppercase tracking-widest hover:bg-brand-white transition-colors"
-              >
-                Läs mer om behandling
-              </Link>
-            </div>
+            <AnimateOnScroll animation="fadeUp" delay={0.3}>
+              <div className="flex flex-wrap items-center gap-6 pt-4">
+                <Link
+                  href="#contact"
+                  className="sketchy-btn bg-brand-orange text-brand-navy border-2 border-brand-navy px-8 py-4 font-bold text-xs uppercase tracking-widest shadow-sketch hover:shadow-sketch-hover hover:translate-x-[2px] hover:translate-y-[2px] flex items-center gap-3"
+                >
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                  Kontakta Oss
+                </Link>
+                <Link
+                  href="#how-we-work"
+                  className="sketchy-btn bg-transparent text-brand-navy border-2 border-brand-navy px-8 py-4 font-bold text-xs uppercase tracking-widest hover:bg-brand-white transition-colors"
+                >
+                  Läs mer om behandling
+                </Link>
+              </div>
+            </AnimateOnScroll>
           </div>
 
           {/* Right: Hero Image Card */}
           <div className="lg:col-span-6 relative flex items-center justify-center lg:justify-end">
-            <div className="w-full max-w-2xl bg-brand-white border-2 border-brand-navy sketchy-box p-4 shadow-card relative z-10 animate-gentle-twist">
-              <div className="aspect-[4/3] bg-brand-navy overflow-hidden sketchy-box relative">
-                <Image
-                  src="/images/hero-image.jpg"
-                  alt="Lugnt hav i Spanien"
-                  fill
-                  className="object-cover opacity-90"
-                />
-                <div className="absolute bottom-4 right-4 bg-brand-white/90 backdrop-blur px-3 py-1 text-[10px] font-bold uppercase tracking-widest border border-brand-navy shadow-sm">
-                  La Marina, Spanien
+            <AnimateOnScroll animation="scale" delay={0.2} className="w-full max-w-2xl">
+              <div className="w-full bg-brand-white border-2 border-brand-navy sketchy-box p-4 shadow-card relative z-10 animate-gentle-twist hover-glow">
+                <div className="aspect-[4/3] bg-brand-navy overflow-hidden sketchy-box relative">
+                  <Image
+                    src="/images/hero-image.jpg"
+                    alt="Lugnt hav i Spanien"
+                    fill
+                    className="object-cover opacity-90 hover-zoom"
+                  />
+                  <div className="absolute bottom-4 right-4 bg-brand-white/90 backdrop-blur px-3 py-1 text-[10px] font-bold uppercase tracking-widest border border-brand-navy shadow-sm">
+                    La Marina, Spanien
+                  </div>
                 </div>
               </div>
-            </div>
+            </AnimateOnScroll>
           </div>
         </div>
       </header>
 
       {/* Våra Styrkor Section */}
-      <section className="py-24 border-y-2 border-brand-navy/10 relative">
+      <section className="py-24 border-y-2 border-brand-navy/10 relative bg-brand-section-bg">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-16 text-center">
+          <AnimateOnScroll animation="fadeUp" className="mb-16 text-center">
             <div className="inline-block border-2 border-brand-navy px-4 py-1 mb-6 sketchy-box transform -rotate-1">
               <span className="font-bold text-xs tracking-widest text-brand-navy uppercase">Varför välja oss?</span>
             </div>
-            <h2 className="font-serif text-4xl md:text-5xl text-brand-navy max-w-3xl mx-auto leading-tight">
+            <h2 className="font-serif text-4xl md:text-5xl text-brand-header-text max-w-3xl mx-auto leading-tight">
               Våra <span className="marker-highlight px-2">styrkor</span> &amp; varför du ska komma ner till oss.
             </h2>
             <p className="mt-6 text-brand-gray font-light max-w-2xl mx-auto text-lg">
               Vi erbjuder en unik kombination av kompetens, miljö och metod.
             </p>
-          </div>
+          </AnimateOnScroll>
 
           {/* Stats Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
+          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20" staggerDelay={0.1}>
             {/* Prisvärt */}
-            <div className="relative text-center group">
-              <div className="border-2 border-brand-navy p-8 sketchy-box bg-brand-white group-hover:-translate-y-2 transition-transform duration-300 shadow-sketch h-full flex flex-col justify-center">
-                <span className="block font-serif text-3xl font-medium text-brand-navy mb-4">Prisvärt</span>
-                <p className="font-sans text-sm text-brand-gray leading-relaxed">
-                  Betydligt lägre kostnad än i Sverige, utan att kompromissa med kvaliteten.
-                </p>
+            <StaggerItem>
+              <div className="relative text-center group">
+                <div className="border-2 border-brand-navy p-8 sketchy-box bg-brand-white group-hover:-translate-y-2 transition-transform duration-300 shadow-sketch h-full flex flex-col justify-center">
+                  <span className="block text-3xl text-brand-header-text mb-4" style={{ fontFamily: 'Epilogue, sans-serif', fontWeight: 600 }}>Prisvärt</span>
+                  <p className="font-sans text-sm text-brand-gray leading-relaxed">
+                    Betydligt lägre kostnad än i Sverige, utan att kompromissa med kvaliteten.
+                  </p>
+                </div>
               </div>
-            </div>
+            </StaggerItem>
 
             {/* Professionellt */}
-            <div className="relative text-center group">
-              <div className="border-2 border-brand-navy p-8 sketchy-box bg-brand-white group-hover:-translate-y-2 transition-transform duration-300 shadow-sketch h-full flex flex-col justify-center">
-                <span className="block font-serif text-3xl font-medium text-brand-navy mb-4">Professionellt</span>
-                <p className="font-sans text-sm text-brand-gray leading-relaxed">
-                  Vi är helt inriktade på alkoholism med ett etiskt och personligt bemötande.
-                </p>
+            <StaggerItem>
+              <div className="relative text-center group">
+                <div className="border-2 border-brand-navy p-8 sketchy-box bg-brand-white group-hover:-translate-y-2 transition-transform duration-300 shadow-sketch h-full flex flex-col justify-center">
+                  <span className="block text-3xl text-brand-header-text mb-4" style={{ fontFamily: 'Epilogue, sans-serif', fontWeight: 600 }}>Professionellt</span>
+                  <p className="font-sans text-sm text-brand-gray leading-relaxed">
+                    Vi är helt inriktade på alkoholism med ett etiskt och personligt bemötande.
+                  </p>
+                </div>
               </div>
-            </div>
+            </StaggerItem>
 
             {/* Trygg Miljö */}
-            <div className="relative text-center group">
-              <div className="border-2 border-brand-navy p-8 sketchy-box bg-brand-white group-hover:-translate-y-2 transition-transform duration-300 shadow-sketch h-full flex flex-col justify-center">
-                <span className="block font-serif text-3xl font-medium text-brand-navy mb-4">Trygg Miljö</span>
-                <p className="font-sans text-sm text-brand-gray leading-relaxed">
-                  Återhämta dig i en harmonisk miljö. Husdjur är välkomna!
-                </p>
+            <StaggerItem>
+              <div className="relative text-center group">
+                <div className="border-2 border-brand-navy p-8 sketchy-box bg-brand-white group-hover:-translate-y-2 transition-transform duration-300 shadow-sketch h-full flex flex-col justify-center">
+                  <span className="block text-3xl text-brand-header-text mb-4" style={{ fontFamily: 'Epilogue, sans-serif', fontWeight: 600 }}>Trygg Miljö</span>
+                  <p className="font-sans text-sm text-brand-gray leading-relaxed">
+                    Återhämta dig i en harmonisk miljö. Husdjur är välkomna!
+                  </p>
+                </div>
               </div>
-            </div>
+            </StaggerItem>
 
             {/* 70-80% */}
-            <div className="relative text-center group">
-              <div className="border-2 border-brand-navy p-8 sketchy-box bg-brand-white group-hover:-translate-y-2 transition-transform duration-300 shadow-sketch h-full flex flex-col justify-center">
-                <span className="block font-serif text-2xl md:text-3xl font-medium text-brand-navy mb-4">70-80%</span>
-                <p className="font-sans text-sm text-brand-gray leading-relaxed">
-                  Så många av våra tidigare klienter lever i dag nyktra och i harmoni – ett resultat av vår kvalitativa och individuellt anpassade behandling.
-                </p>
+            <StaggerItem>
+              <div className="relative text-center group">
+                <div className="border-2 border-brand-navy p-8 sketchy-box bg-brand-white group-hover:-translate-y-2 transition-transform duration-300 shadow-sketch h-full flex flex-col justify-center">
+                  <span className="block text-2xl md:text-3xl text-brand-header-text mb-4" style={{ fontFamily: 'Epilogue, sans-serif', fontWeight: 600 }}>70-80%</span>
+                  <p className="font-sans text-sm text-brand-gray leading-relaxed">
+                    Så många av våra tidigare klienter lever i dag nyktra och i harmoni – ett resultat av vår kvalitativa och individuellt anpassade behandling.
+                  </p>
+                </div>
               </div>
-            </div>
-          </div>
+            </StaggerItem>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -142,88 +163,92 @@ export default function HomePage() {
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-12 gap-12 items-start">
-            <div className="lg:col-span-4 sticky top-32">
+            <AnimateOnScroll animation="fadeRight" className="lg:col-span-4 lg:sticky lg:top-32">
               <span className="font-bold text-xs tracking-widest text-brand-gray uppercase mb-4 block">
                 Möt Teamet
               </span>
-              <h2 className="font-serif text-4xl font-medium text-brand-navy mb-6 leading-tight">
+              <h2 className="font-serif text-4xl font-medium text-brand-header-text mb-6 leading-tight">
                 Möt teamet <br />
                 <span className="italic text-brand-orange">bakom behandlingen</span>
               </h2>
               <p className="text-brand-gray font-light mb-8 font-sans">
                 Här möter du några av Sveriges mest erfarna beroendeterapeuter. Arne Stålberg och Jan Hellberg har vigt sina liv åt att hjälpa andra tillbaka till livet. Med en unik kombination av egen erfarenhet och djup yrkeskunskap skapar de den trygghet som krävs för varaktig förändring.
               </p>
-            </div>
+            </AnimateOnScroll>
 
             <div className="lg:col-span-8 grid md:grid-cols-2 gap-12">
               {/* Arne */}
-              <div className="relative group">
-                <div className="aspect-[4/5] bg-brand-cream border-2 border-brand-navy sketchy-box mb-6 overflow-hidden relative transition-all duration-500 shadow-sketch">
-                  <Image
-                    src="/images/portrait_arne.jpg"
-                    alt="Arne Stålberg"
-                    fill
-                    className="object-cover mix-blend-multiply opacity-90"
-                  />
+              <AnimateOnScroll animation="fadeUp" delay={0.1}>
+                <div className="relative group">
+                  <div className="aspect-[4/5] bg-brand-cream border-2 border-brand-navy sketchy-box mb-6 overflow-hidden relative transition-all duration-500 shadow-sketch hover-portrait hover-lift">
+                    <Image
+                      src="/images/portrait_arne.jpg"
+                      alt="Arne Stålberg"
+                      fill
+                      className="object-cover mix-blend-multiply opacity-90 hover-brighten"
+                    />
+                  </div>
+                  <div className="relative">
+                    <span className="absolute -top-10 -left-2 bg-brand-navy text-brand-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest transform -rotate-3">
+                      Grundare
+                    </span>
+                    <h4 className="font-serif text-2xl text-brand-header-text">Arne Stålberg</h4>
+                    <p className="font-sans text-xs font-bold tracking-widest text-brand-orange uppercase mb-3">
+                      Diplomerad A-terapeut
+                    </p>
+                    <p className="text-sm text-brand-gray leading-relaxed">
+                      &quot;Arne grundade Addicted Rehab för att ge den hjälp han själv behövde. Som A-terapeut förenar han yrkeskunskap med egen erfarenhet och möter dig med genuin empati – helt utan dömande.&quot;
+                    </p>
+                  </div>
                 </div>
-                <div className="relative">
-                  <span className="absolute -top-10 -left-2 bg-brand-navy text-brand-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest transform -rotate-3">
-                    Grundare
-                  </span>
-                  <h4 className="font-serif text-2xl text-brand-navy">Arne Stålberg</h4>
-                  <p className="font-sans text-xs font-bold tracking-widest text-brand-orange uppercase mb-3">
-                    Diplomerad A-terapeut
-                  </p>
-                  <p className="text-sm text-brand-gray leading-relaxed">
-                    &quot;Arne grundade Addicted Rehab för att ge den hjälp han själv behövde. Som A-terapeut förenar han yrkeskunskap med egen erfarenhet och möter dig med genuin empati – helt utan dömande.&quot;
-                  </p>
-                </div>
-              </div>
+              </AnimateOnScroll>
 
               {/* Jan */}
-              <div className="relative group">
-                <div className="aspect-[4/5] bg-brand-cream border-2 border-brand-navy sketchy-box mb-6 overflow-hidden relative transition-all duration-500 shadow-sketch">
-                  <Image
-                    src="/images/portrait_jan.jpg"
-                    alt="Jan Hellberg"
-                    fill
-                    className="object-cover mix-blend-multiply opacity-90"
-                  />
+              <AnimateOnScroll animation="fadeUp" delay={0.2}>
+                <div className="relative group">
+                  <div className="aspect-[4/5] bg-brand-cream border-2 border-brand-navy sketchy-box mb-6 overflow-hidden relative transition-all duration-500 shadow-sketch hover-portrait hover-lift">
+                    <Image
+                      src="/images/portrait_jan.jpg"
+                      alt="Jan Hellberg"
+                      fill
+                      className="object-cover mix-blend-multiply opacity-90 hover-brighten"
+                    />
+                  </div>
+                  <div className="relative">
+                    <span className="absolute -top-10 -right-2 bg-brand-orange text-brand-navy px-3 py-1 text-[10px] font-bold uppercase tracking-widest transform rotate-2">
+                      Arnes tidigare lärare
+                    </span>
+                    <h4 className="font-serif text-2xl text-brand-header-text">Jan Hellberg</h4>
+                    <p className="font-sans text-xs font-bold tracking-widest text-brand-orange uppercase mb-3">
+                      Erfaren Vägvisare
+                    </p>
+                    <p className="text-sm text-brand-gray leading-relaxed">
+                      &quot;Jan är en erfaren vägvisare som förenar teori med decennier av praktik. Som tidigare lärare för terapeuter ser han människan bakom beroendet och skapar trygga vägar till tillfrisknande.&quot;
+                    </p>
+                  </div>
                 </div>
-                <div className="relative">
-                  <span className="absolute -top-10 -right-2 bg-brand-orange text-brand-navy px-3 py-1 text-[10px] font-bold uppercase tracking-widest transform rotate-2">
-                    Arnes tidigare lärare
-                  </span>
-                  <h4 className="font-serif text-2xl text-brand-navy">Jan Hellberg</h4>
-                  <p className="font-sans text-xs font-bold tracking-widest text-brand-orange uppercase mb-3">
-                    Erfaren Vägvisare
-                  </p>
-                  <p className="text-sm text-brand-gray leading-relaxed">
-                    &quot;Jan är en erfaren vägvisare som förenar teori med decennier av praktik. Som tidigare lärare för terapeuter ser han människan bakom beroendet och skapar trygga vägar till tillfrisknande.&quot;
-                  </p>
-                </div>
-              </div>
+              </AnimateOnScroll>
 
-              <div className="text-center mt-12 md:col-span-2">
+              <AnimateOnScroll animation="fadeUp" delay={0.3} className="text-center mt-12 md:col-span-2">
                 <Link
                   href="/om-oss"
                   className="sketchy-btn bg-transparent text-brand-navy border-2 border-brand-navy px-8 py-4 font-bold text-xs uppercase tracking-widest hover:bg-brand-navy hover:text-brand-white transition-colors inline-block transform hover:-rotate-1"
                 >
                   Läs mer om oss
                 </Link>
-              </div>
+              </AnimateOnScroll>
             </div>
           </div>
         </div>
       </section>
 
       {/* Hur Vi Jobbar Section */}
-      <section id="how-we-work" className="py-24 border-t-2 border-brand-navy/10">
+      <section id="how-we-work" className="py-24 border-t-2 border-brand-navy/10 bg-brand-section-bg">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-            <div>
+          <AnimateOnScroll animation="fadeUp" className="flex flex-col md:flex-row justify-between items-center md:items-end mb-16 gap-6">
+            <div className="text-center md:text-left">
               <span className="font-bold text-xs tracking-widest text-brand-gray uppercase mb-2 block">Metodik</span>
-              <h2 className="font-serif text-4xl font-medium text-brand-navy">Hur vi jobbar</h2>
+              <h2 className="font-serif text-4xl font-medium text-brand-header-text">Hur vi jobbar</h2>
             </div>
             <Link
               href="#contact"
@@ -234,87 +259,93 @@ export default function HomePage() {
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </Link>
-          </div>
+          </AnimateOnScroll>
 
-          <div className="grid md:grid-cols-3 gap-x-8 gap-y-16">
+          <StaggerContainer className="grid md:grid-cols-3 gap-x-8 gap-y-16" staggerDelay={0.15}>
             {/* Minnesota */}
-            <article className="group">
-              <div className="relative aspect-square bg-brand-navy mb-6 border-2 border-brand-navy sketchy-box overflow-hidden shadow-sketch group-hover:shadow-sketch-hover group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all">
-                <Image
-                  src="/images/how-minnesota.jpg"
-                  alt="Minnesota Modellen"
-                  fill
-                  className="object-cover opacity-80 hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-              <div className="space-y-3">
-                <span className="text-[10px] font-bold text-brand-orange uppercase tracking-widest border border-brand-orange rounded-full px-3 py-0.5 inline-block">
-                  Grunden
-                </span>
-                <h4 className="font-serif text-xl font-medium text-brand-navy leading-tight group-hover:text-brand-orange transition-colors">
-                  Minnesota Modellen
-                </h4>
-                <p className="text-sm text-brand-gray font-light leading-relaxed line-clamp-3">
-                  Vi arbetar enligt Minnesotamodellen, en av världens mest effektiva metoder. Hos oss gör du detta individuellt med stöd av erfarna terapeuter.
-                </p>
-              </div>
-            </article>
+            <StaggerItem>
+              <article className="group">
+                <div className="relative aspect-square bg-brand-navy mb-6 border-2 border-brand-navy sketchy-box overflow-hidden shadow-sketch group-hover:shadow-sketch-hover group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all">
+                  <Image
+                    src="/images/how-minnesota.jpg"
+                    alt="Minnesota Modellen"
+                    fill
+                    className="object-cover opacity-80 hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+                <div className="space-y-3">
+                  <span className="text-[10px] font-bold text-brand-orange uppercase tracking-widest border border-brand-orange rounded-full px-3 py-0.5 inline-block">
+                    Grunden
+                  </span>
+                  <h4 className="font-serif text-xl font-medium text-brand-header-text leading-tight group-hover:text-brand-orange transition-colors">
+                    Minnesota Modellen
+                  </h4>
+                  <p className="text-sm text-brand-gray font-light leading-relaxed line-clamp-3">
+                    Vi arbetar enligt Minnesotamodellen, en av världens mest effektiva metoder. Hos oss gör du detta individuellt med stöd av erfarna terapeuter.
+                  </p>
+                </div>
+              </article>
+            </StaggerItem>
 
             {/* Terapi */}
-            <article className="group">
-              <div className="relative aspect-square bg-brand-navy mb-6 border-2 border-brand-navy sketchy-box overflow-hidden shadow-sketch group-hover:shadow-sketch-hover group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all">
-                <Image
-                  src="/images/how-therapy.jpg"
-                  alt="Individanpassad Terapi"
-                  fill
-                  className="object-cover opacity-80 hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-              <div className="space-y-3">
-                <span className="text-[10px] font-bold text-brand-orange uppercase tracking-widest border border-brand-orange rounded-full px-3 py-0.5 inline-block">
-                  Samtal
-                </span>
-                <h4 className="font-serif text-xl font-medium text-brand-navy leading-tight group-hover:text-brand-orange transition-colors">
-                  Individanpassad Terapi
-                </h4>
-                <p className="text-sm text-brand-gray font-light leading-relaxed line-clamp-3">
-                  Varje dag träffar du din terapeut för att arbeta med tankar och beteenden. Målet är att ge dig verktyg för att hantera stress och sug.
-                </p>
-              </div>
-            </article>
+            <StaggerItem>
+              <article className="group">
+                <div className="relative aspect-square bg-brand-navy mb-6 border-2 border-brand-navy sketchy-box overflow-hidden shadow-sketch group-hover:shadow-sketch-hover group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all">
+                  <Image
+                    src="/images/how-therapy.jpg"
+                    alt="Individanpassad Terapi"
+                    fill
+                    className="object-cover opacity-80 hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+                <div className="space-y-3">
+                  <span className="text-[10px] font-bold text-brand-orange uppercase tracking-widest border border-brand-orange rounded-full px-3 py-0.5 inline-block">
+                    Samtal
+                  </span>
+                  <h4 className="font-serif text-xl font-medium text-brand-header-text leading-tight group-hover:text-brand-orange transition-colors">
+                    Individanpassad Terapi
+                  </h4>
+                  <p className="text-sm text-brand-gray font-light leading-relaxed line-clamp-3">
+                    Varje dag träffar du din terapeut för att arbeta med tankar och beteenden. Målet är att ge dig verktyg för att hantera stress och sug.
+                  </p>
+                </div>
+              </article>
+            </StaggerItem>
 
             {/* Egentid */}
-            <article className="group">
-              <div className="relative aspect-square bg-brand-navy mb-6 border-2 border-brand-navy sketchy-box overflow-hidden shadow-sketch group-hover:shadow-sketch-hover group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all">
-                <Image
-                  src="/images/how-tasks.jpg"
-                  alt="Egentid"
-                  fill
-                  className="object-cover opacity-80 hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-              <div className="space-y-3">
-                <span className="text-[10px] font-bold text-brand-orange uppercase tracking-widest border border-brand-orange rounded-full px-3 py-0.5 inline-block">
-                  Reflektion
-                </span>
-                <h4 className="font-serif text-xl font-medium text-brand-navy leading-tight group-hover:text-brand-orange transition-colors">
-                  Egentid &amp; Arbetsuppgifter
-                </h4>
-                <p className="text-sm text-brand-gray font-light leading-relaxed line-clamp-3">
-                  På eftermiddagarna arbetar du med individuella övningar som fördjupar behandlingen. Ingen grupp, ingen press – fullt fokus på dig.
-                </p>
-              </div>
-            </article>
-          </div>
+            <StaggerItem>
+              <article className="group">
+                <div className="relative aspect-square bg-brand-navy mb-6 border-2 border-brand-navy sketchy-box overflow-hidden shadow-sketch group-hover:shadow-sketch-hover group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all">
+                  <Image
+                    src="/images/how-tasks.jpg"
+                    alt="Egentid"
+                    fill
+                    className="object-cover opacity-80 hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+                <div className="space-y-3">
+                  <span className="text-[10px] font-bold text-brand-orange uppercase tracking-widest border border-brand-orange rounded-full px-3 py-0.5 inline-block">
+                    Reflektion
+                  </span>
+                  <h4 className="font-serif text-xl font-medium text-brand-header-text leading-tight group-hover:text-brand-orange transition-colors">
+                    Egentid &amp; Arbetsuppgifter
+                  </h4>
+                  <p className="text-sm text-brand-gray font-light leading-relaxed line-clamp-3">
+                    På eftermiddagarna arbetar du med individuella övningar som fördjupar behandlingen. Ingen grupp, ingen press – fullt fokus på dig.
+                  </p>
+                </div>
+              </article>
+            </StaggerItem>
+          </StaggerContainer>
 
-          <div className="text-center mt-16">
+          <AnimateOnScroll animation="fadeUp" delay={0.4} className="text-center mt-16">
             <Link
               href="/var-behandling"
               className="sketchy-btn bg-brand-orange text-brand-navy border-2 border-brand-navy px-8 py-4 font-bold text-xs uppercase tracking-widest hover:bg-brand-white transition-colors shadow-sketch hover:shadow-sketch-hover inline-block"
             >
               Läs mer om vår behandling
             </Link>
-          </div>
+          </AnimateOnScroll>
         </div>
       </section>
 
@@ -322,21 +353,21 @@ export default function HomePage() {
       <section className="bg-brand-cream">
         <div className="grid lg:grid-cols-2">
           {/* Image Side */}
-          <div className="relative aspect-square lg:aspect-auto min-h-[400px] lg:min-h-[600px]">
+          <AnimateOnScroll animation="fadeRight" className="relative aspect-square lg:aspect-auto min-h-[400px] lg:min-h-[600px]">
             <Image
               src="/images/individuell-behandling.jpg"
               alt="Person looking at sunset over mountains"
               fill
               className="object-cover"
             />
-          </div>
+          </AnimateOnScroll>
 
           {/* Content Side */}
           <div className="flex items-center py-16 lg:py-24 px-6 lg:px-16">
-            <div className="max-w-xl">
+            <AnimateOnScroll animation="fadeLeft" className="max-w-xl">
               <div className="flex items-start gap-4 mb-8">
                 <div className="w-1 h-16 bg-brand-orange flex-shrink-0 mt-1"></div>
-                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-brand-navy leading-tight">
+                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-brand-header-text leading-tight">
                   Varför individuell behandling fungerar
                 </h2>
               </div>
@@ -358,51 +389,53 @@ export default function HomePage() {
                   Kontakta Oss
                 </Link>
               </div>
-            </div>
+            </AnimateOnScroll>
           </div>
         </div>
       </section>
 
       {/* Robert Berättar Section */}
-      <section id="testimonial" className="py-24 bg-brand-cream border-t-2 border-brand-navy/10 relative overflow-hidden">
+      <section id="testimonial" className="py-24 bg-brand-section-bg border-t-2 border-brand-navy/10 relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-12">
+          <AnimateOnScroll animation="fadeUp" className="text-center mb-12">
             <span className="font-bold text-xs tracking-widest text-brand-gray uppercase mb-2 block">Berättelser</span>
-            <h2 className="font-serif text-4xl md:text-5xl text-brand-navy">&quot;Robert&quot; berättar</h2>
-          </div>
+            <h2 className="font-serif text-4xl md:text-5xl text-brand-header-text">&quot;Robert&quot; berättar</h2>
+          </AnimateOnScroll>
 
-          <div className="relative bg-brand-white border-2 border-brand-navy sketchy-box p-8 md:p-12 shadow-card">
-            <div className="relative z-10 space-y-6">
-              <div>
-                <h4 className="font-bold text-brand-navy text-sm uppercase tracking-widest mb-2">
-                  Hur såg ditt liv ut innan?
-                </h4>
-                <p className="font-serif text-xl italic text-brand-gray leading-relaxed">
-                  &quot;Innan jag kom ner till Spanien kändes livet som om det hade låst sig. Jag vaknade med ångest nästan varje dag... Alkoholen hade gått från att vara något som &apos;hjälpte mig att slappna av&apos; till något som styrde hela mitt dygn.&quot;
-                </p>
+          <AnimateOnScroll animation="scale" delay={0.2}>
+            <div className="relative bg-brand-white border-2 border-brand-navy sketchy-box p-8 md:p-12 shadow-card">
+              <div className="relative z-10 space-y-6">
+                <div>
+                  <h4 className="font-bold text-brand-navy text-sm uppercase tracking-widest mb-2">
+                    Hur såg ditt liv ut innan?
+                  </h4>
+                  <p className="font-serif text-xl italic text-brand-gray leading-relaxed">
+                    &quot;Innan jag kom ner till Spanien kändes livet som om det hade låst sig. Jag vaknade med ångest nästan varje dag... Alkoholen hade gått från att vara något som &apos;hjälpte mig att slappna av&apos; till något som styrde hela mitt dygn.&quot;
+                  </p>
+                </div>
+
+                <div className="w-full h-px bg-brand-navy/10 border-t border-dashed border-brand-navy/20"></div>
+
+                <div>
+                  <h4 className="font-bold text-brand-navy text-sm uppercase tracking-widest mb-2">
+                    Hur ser ditt liv ut idag?
+                  </h4>
+                  <p className="font-serif text-xl italic text-brand-gray leading-relaxed">
+                    &quot;Idag är livet nästan oigenkännligt... Jag vaknade klar i huvudet. Jag känner mig stolt över mina dagar istället för att skämmas över kvällarna.&quot;
+                  </p>
+                </div>
               </div>
 
-              <div className="w-full h-px bg-brand-navy/10 border-t border-dashed border-brand-navy/20"></div>
-
-              <div>
-                <h4 className="font-bold text-brand-navy text-sm uppercase tracking-widest mb-2">
-                  Hur ser ditt liv ut idag?
-                </h4>
-                <p className="font-serif text-xl italic text-brand-gray leading-relaxed">
-                  &quot;Idag är livet nästan oigenkännligt... Jag vaknade klar i huvudet. Jag känner mig stolt över mina dagar istället för att skämmas över kvällarna.&quot;
-                </p>
+              <div className="mt-8 flex justify-end items-center gap-4">
+                <div className="text-right">
+                  <span className="block font-bold text-brand-navy">&quot;Robert&quot;</span>
+                  <span className="text-xs text-brand-gray tracking-widest uppercase">Tidigare Klient</span>
+                </div>
               </div>
             </div>
+          </AnimateOnScroll>
 
-            <div className="mt-8 flex justify-end items-center gap-4">
-              <div className="text-right">
-                <span className="block font-bold text-brand-navy">&quot;Robert&quot;</span>
-                <span className="text-xs text-brand-gray tracking-widest uppercase">Tidigare Klient</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-4 mt-12">
+          <AnimateOnScroll animation="fadeUp" delay={0.4} className="flex flex-wrap justify-center gap-4 mt-12">
             <Link
               href="/berattelser"
               className="sketchy-btn bg-transparent text-brand-navy border-2 border-brand-navy px-8 py-4 font-bold text-xs uppercase tracking-widest hover:bg-brand-navy hover:text-brand-white transition-colors"
@@ -415,7 +448,7 @@ export default function HomePage() {
             >
               Läs hela Roberts berättelse
             </Link>
-          </div>
+          </AnimateOnScroll>
         </div>
       </section>
     </>

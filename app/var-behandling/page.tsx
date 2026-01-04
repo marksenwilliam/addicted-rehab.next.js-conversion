@@ -12,13 +12,13 @@ export default function VarBehandlingPage() {
     return (
         <>
             {/* Hero Section */}
-            <header className="pt-32 pb-20 bg-brand-cream relative overflow-hidden">
+            <header className="pt-32 pb-20 bg-brand-section-bg relative overflow-hidden">
                 <div className="container mx-auto px-6 relative z-10 max-w-5xl">
                     <div>
                         <span className="font-bold text-xs tracking-widest text-brand-orange uppercase mb-4 block">
                             Behandlingen
                         </span>
-                        <h1 className="font-serif text-5xl md:text-7xl text-brand-navy mb-8 leading-tight">
+                        <h1 className="font-serif text-5xl md:text-7xl text-brand-header-text mb-8 leading-tight">
                             En behandling som <br />
                             <span className="marker-highlight px-2 transform -rotate-1 inline-block">utgår från dig</span>
                         </h1>
@@ -44,14 +44,14 @@ export default function VarBehandlingPage() {
                                     alt="Arne Stålberg"
                                     width={600}
                                     height={600}
-                                    className="w-full h-[600px] object-cover transition-all duration-700"
+                                    className="w-full h-[600px] object-cover transition-all duration-700 hover-brighten"
                                 />
                             </div>
                         </div>
 
                         {/* Text Right */}
                         <div>
-                            <h2 className="font-serif text-3xl md:text-4xl text-brand-navy mb-6">
+                            <h2 className="font-serif text-3xl md:text-4xl text-brand-header-text mb-6">
                                 En lugn miljö som skapar förändring
                             </h2>
                             <p className="text-brand-gray text-lg leading-relaxed mb-6">
@@ -68,7 +68,7 @@ export default function VarBehandlingPage() {
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         {/* Text Left */}
                         <div className="order-2 lg:order-1">
-                            <h2 className="font-serif text-3xl md:text-4xl text-brand-navy mb-6">
+                            <h2 className="font-serif text-3xl md:text-4xl text-brand-header-text mb-6">
                                 Ett nära stöd genom hela processen
                             </h2>
                             <p className="text-brand-gray text-lg leading-relaxed mb-6">
@@ -93,7 +93,7 @@ export default function VarBehandlingPage() {
                                     alt="Jan Hellberg"
                                     width={600}
                                     height={600}
-                                    className="w-full h-[600px] object-cover transition-all duration-700"
+                                    className="w-full h-[600px] object-cover transition-all duration-700 hover-brighten"
                                 />
                             </div>
                         </div>
@@ -136,7 +136,7 @@ export default function VarBehandlingPage() {
                         <div className="lg:w-2/3">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 {/* Card 1 - Fokus på dig */}
-                                <div className="group bg-brand-white/5 border-2 border-brand-cream/20 sketchy-box p-8 transition-all duration-300 hover:border-brand-orange/50 hover:shadow-sketch relative overflow-hidden transform rotate-1 hover:rotate-0">
+                                <div className="group bg-brand-white/5 border-2 border-brand-cream/20 sketchy-box p-8 transition-all duration-300 hover:border-brand-orange/50 hover:shadow-sketch relative overflow-hidden transform rotate-1 hover:rotate-0 hover-lift">
                                     <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-brand-orange/10 to-transparent -mr-4 -mt-4 transition-transform group-hover:scale-110 duration-500" style={{ borderRadius: '0 0 0 100%' }}></div>
                                     <div className="relative w-14 h-14 mb-6">
                                         <div className="absolute inset-0 bg-brand-orange/30 sketchy-box transform translate-x-1 translate-y-1"></div>
@@ -153,7 +153,7 @@ export default function VarBehandlingPage() {
                                 </div>
 
                                 {/* Card 2 - Öppenhet */}
-                                <div className="group bg-brand-white/5 border-2 border-brand-cream/20 sketchy-box p-8 transition-all duration-300 hover:border-brand-orange/50 hover:shadow-sketch relative overflow-hidden transform -rotate-1 hover:rotate-0">
+                                <div className="group bg-brand-white/5 border-2 border-brand-cream/20 sketchy-box p-8 transition-all duration-300 hover:border-brand-orange/50 hover:shadow-sketch relative overflow-hidden transform -rotate-1 hover:rotate-0 hover-lift">
                                     <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-brand-orange/10 to-transparent -mr-4 -mt-4 transition-transform group-hover:scale-110 duration-500" style={{ borderRadius: '0 0 0 100%' }}></div>
                                     <div className="relative w-14 h-14 mb-6">
                                         <div className="absolute inset-0 bg-brand-orange/30 sketchy-box transform translate-x-1 translate-y-1"></div>
@@ -170,7 +170,7 @@ export default function VarBehandlingPage() {
                                 </div>
 
                                 {/* Card 3 - Ditt tempo */}
-                                <div className="group bg-brand-white/5 border-2 border-brand-cream/20 sketchy-box p-8 transition-all duration-300 hover:border-brand-orange/50 hover:shadow-sketch relative overflow-hidden transform -rotate-[0.5deg] hover:rotate-0">
+                                <div className="group bg-brand-white/5 border-2 border-brand-cream/20 sketchy-box p-8 transition-all duration-300 hover:border-brand-orange/50 hover:shadow-sketch relative overflow-hidden transform -rotate-[0.5deg] hover:rotate-0 hover-lift">
                                     <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-brand-orange/10 to-transparent -mr-4 -mt-4 transition-transform group-hover:scale-110 duration-500" style={{ borderRadius: '0 0 0 100%' }}></div>
                                     <div className="relative w-14 h-14 mb-6">
                                         <div className="absolute inset-0 bg-brand-orange/30 sketchy-box transform translate-x-1 translate-y-1"></div>
@@ -187,7 +187,7 @@ export default function VarBehandlingPage() {
                                 </div>
 
                                 {/* Card 4 - Verktyg */}
-                                <div className="group bg-brand-white/5 border-2 border-brand-cream/20 sketchy-box p-8 transition-all duration-300 hover:border-brand-orange/50 hover:shadow-sketch relative overflow-hidden transform rotate-[0.75deg] hover:rotate-0">
+                                <div className="group bg-brand-white/5 border-2 border-brand-cream/20 sketchy-box p-8 transition-all duration-300 hover:border-brand-orange/50 hover:shadow-sketch relative overflow-hidden transform rotate-[0.75deg] hover:rotate-0 hover-lift">
                                     <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-brand-orange/10 to-transparent -mr-4 -mt-4 transition-transform group-hover:scale-110 duration-500" style={{ borderRadius: '0 0 0 100%' }}></div>
                                     <div className="relative w-14 h-14 mb-6">
                                         <div className="absolute inset-0 bg-brand-orange/30 sketchy-box transform translate-x-1 translate-y-1"></div>
@@ -209,12 +209,12 @@ export default function VarBehandlingPage() {
             </section>
 
             {/* Tools & Outcome */}
-            <section className="py-24 bg-brand-cream">
+            <section className="py-24 bg-brand-section-bg">
                 <div className="container mx-auto px-6 max-w-6xl">
                     <div className="grid lg:grid-cols-2 gap-16">
                         {/* Tools */}
                         <div>
-                            <h2 className="font-serif text-3xl text-brand-navy mb-6">
+                            <h2 className="font-serif text-3xl text-brand-header-text mb-6">
                                 Konkreta verktyg för ett nyktert och stabilt liv
                             </h2>
                             <p className="text-brand-gray leading-relaxed mb-8">
@@ -244,8 +244,8 @@ export default function VarBehandlingPage() {
                         </div>
 
                         {/* Outcome */}
-                        <div className="bg-brand-white p-8 border-2 border-brand-navy sketchy-box shadow-sketch">
-                            <h2 className="font-serif text-3xl text-brand-navy mb-6">Ett liv du kan stå stadigt i</h2>
+                        <div className="bg-brand-white p-8 border-2 border-brand-navy sketchy-box shadow-sketch hover-lift">
+                            <h2 className="font-serif text-3xl text-brand-header-text mb-6">Ett liv du kan stå stadigt i</h2>
                             <p className="text-brand-gray leading-relaxed mb-6">
                                 Många som genomgår vår behandling beskriver att de får med sig en ny känsla av lugn, klarhet och hopp.
                                 När du förstår dig själv på djupet och lär dig hur du kan möta livet utan alkohol skapas också något
@@ -269,7 +269,7 @@ export default function VarBehandlingPage() {
             </section>
 
             {/* Methodology */}
-            <section className="py-24 bg-brand-cream relative">
+            <section className="py-24 bg-brand-section-bg relative">
                 <div className="max-w-4xl mx-auto px-6">
                     {/* Badge */}
                     <div className="flex justify-center mb-8">
@@ -335,12 +335,12 @@ export default function VarBehandlingPage() {
             </section>
 
             {/* Plan & Logistics */}
-            <section className="py-24 bg-brand-cream">
+            <section className="py-24 bg-brand-section-bg">
                 <div className="container mx-auto px-6 max-w-5xl">
                     <div className="grid md:grid-cols-2 gap-12">
                         {/* Behandlingsplan */}
                         <div>
-                            <h2 className="font-serif text-3xl text-brand-navy mb-6 flex items-center gap-3">
+                            <h2 className="font-serif text-3xl text-brand-header-text mb-6 flex items-center gap-3">
                                 <span className="w-8 h-8 bg-brand-navy text-brand-white rounded-full flex items-center justify-center text-sm font-bold">1</span>
                                 Behandlingsplan
                             </h2>
@@ -360,7 +360,7 @@ export default function VarBehandlingPage() {
 
                         {/* Upplägg */}
                         <div>
-                            <h2 className="font-serif text-3xl text-brand-navy mb-6 flex items-center gap-3">
+                            <h2 className="font-serif text-3xl text-brand-header-text mb-6 flex items-center gap-3">
                                 <span className="w-8 h-8 bg-brand-orange text-brand-navy rounded-full flex items-center justify-center text-sm font-bold">2</span>
                                 Upplägg
                             </h2>

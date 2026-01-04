@@ -40,12 +40,12 @@ export default function BlogPage() {
     return (
         <>
             {/* Hero Section */}
-            <header className="pt-32 pb-20 bg-brand-cream relative overflow-hidden text-center">
+            <header className="pt-32 pb-20 bg-brand-section-bg relative overflow-hidden text-center">
                 <div className="max-w-4xl mx-auto px-6 relative z-10">
                     <span className="font-bold text-xs tracking-widest text-brand-orange uppercase mb-4 block">
                         Kunskap & Insikter
                     </span>
-                    <h1 className="font-serif text-5xl md:text-7xl text-brand-navy mb-8 leading-tight">
+                    <h1 className="font-serif text-5xl md:text-7xl text-brand-header-text mb-8 leading-tight">
                         Vår <span className="marker-highlight px-2">Blogg</span>
                     </h1>
                     <p className="font-sans text-lg text-brand-gray font-light leading-relaxed max-w-2xl mx-auto">
@@ -63,12 +63,12 @@ export default function BlogPage() {
                             <article key={post.slug} className="group">
                                 <Link href={`/blogg/${post.slug}`} className="block">
                                     {/* Image */}
-                                    <div className="relative aspect-[4/3] mb-6 border-2 border-brand-navy sketchy-box overflow-hidden shadow-sketch group-hover:shadow-sketch-hover group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all">
+                                    <div className="relative aspect-[4/3] mb-6 border-2 border-brand-navy sketchy-box overflow-hidden shadow-sketch group-hover:shadow-sketch-hover group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all hover-card">
                                         <Image
                                             src={post.image}
                                             alt={post.title}
                                             fill
-                                            className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
+                                            className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-700 hover-brighten"
                                         />
                                     </div>
 
@@ -100,7 +100,7 @@ export default function BlogPage() {
 
                     {/* Coming Soon Note */}
                     <div className="mt-20 text-center">
-                        <div className="inline-block border-2 border-brand-navy px-6 py-3 sketchy-box bg-brand-cream">
+                        <div className="inline-block border-2 border-brand-navy px-6 py-3 sketchy-box bg-brand-section-bg hover-pulse">
                             <p className="text-sm text-brand-gray">
                                 Fler artiklar kommer snart. <span className="text-brand-orange font-bold">Håll utkik!</span>
                             </p>

@@ -11,12 +11,12 @@ export default function VadArAlkoholismPage() {
     return (
         <>
             {/* Hero Section */}
-            <header className="pt-32 pb-20 bg-brand-cream relative overflow-hidden text-center">
+            <header className="pt-32 pb-20 bg-brand-section-bg relative overflow-hidden text-center">
                 <div className="max-w-4xl mx-auto px-6 relative z-10">
                     <span className="font-bold text-xs tracking-widest text-brand-orange uppercase mb-4 block">
                         Kunskap
                     </span>
-                    <h1 className="font-serif text-5xl md:text-7xl text-black mb-8 leading-tight">
+                    <h1 className="font-serif text-5xl md:text-7xl text-brand-header-text mb-8 leading-tight">
                         Vad är <span className="marker-highlight px-2">alkoholism?</span>
                     </h1>
                     <p className="font-sans text-lg text-brand-gray font-light leading-relaxed max-w-2xl mx-auto">
@@ -27,12 +27,12 @@ export default function VadArAlkoholismPage() {
             </header>
 
             {/* Section 1: What is Alcoholism + Symptoms */}
-            <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh] bg-brand-cream">
+            <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh] bg-brand-section-bg">
                 <div className="flex flex-col justify-center px-8 py-16 lg:px-20 lg:py-24 order-2 lg:order-1">
                     <div className="max-w-xl mx-auto lg:mx-0 space-y-8">
-                        <h2 className="font-serif text-5xl md:text-6xl font-medium text-black leading-tight tracking-tight">
+                        <h2 className="font-serif text-5xl md:text-6xl font-medium text-brand-header-text leading-tight tracking-tight">
                             Vad är <br />
-                            <span className="text-black/80">alkoholism</span>
+                            <span className="text-brand-header-text/80">alkoholism</span>
                         </h2>
                         <div className="space-y-4">
                             <p className="text-lg text-brand-gray font-sans font-light leading-relaxed">
@@ -43,7 +43,7 @@ export default function VadArAlkoholismPage() {
                             </p>
                         </div>
                         <div className="pt-8 space-y-6">
-                            <h3 className="font-serif text-4xl md:text-5xl font-medium text-black leading-tight">
+                            <h3 className="font-serif text-4xl md:text-5xl font-medium text-brand-header-text leading-tight">
                                 Vanliga symtom på <br /> alkoholism
                             </h3>
                             <p className="text-lg text-brand-navy font-sans font-medium leading-relaxed">
@@ -66,35 +66,35 @@ export default function VadArAlkoholismPage() {
                         </div>
                     </div>
                 </div>
-                <div className="relative order-1 lg:order-2 h-96 lg:h-auto overflow-hidden bg-brand-cream">
+                <div className="relative order-1 lg:order-2 h-96 lg:h-auto overflow-hidden bg-brand-section-bg">
                     <Image
                         src="/images/8eec4807-8c8b-4a0f-afbf-9a6200c0fa6b.jpeg"
                         alt="Man sitting at a table looking distressed with bottles, artistic illustration style"
                         fill
                         quality={100}
                         priority
-                        className="object-cover opacity-90 hover:scale-105 transition-transform duration-700 ease-in-out"
+                        className="object-cover opacity-90 hover-brighten"
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent to-brand-cream/20 pointer-events-none"></div>
                 </div>
             </section>
 
             {/* Section 2: Causes + Consequences */}
-            <section className="grid grid-cols-1 lg:grid-cols-2 min-h-screen bg-brand-cream">
-                <div className="relative h-96 lg:h-auto overflow-hidden bg-brand-cream">
+            <section className="grid grid-cols-1 lg:grid-cols-2 min-h-screen bg-brand-section-bg">
+                <div className="relative h-96 lg:h-auto overflow-hidden bg-brand-section-bg">
                     <Image
                         src="/images/transparent-bild.png"
                         alt="Sketch illustration of a person hiding face on table with bottles"
                         fill
                         quality={100}
-                        className="object-cover hover:scale-105 transition-transform duration-700 ease-in-out"
+                        className="object-cover hover-brighten"
                     />
                 </div>
                 <div className="flex flex-col justify-center px-8 py-16 lg:px-20 lg:py-24">
                     <div className="max-w-xl mx-auto lg:mx-0 space-y-12">
                         {/* Causes */}
                         <div className="space-y-6">
-                            <h2 className="font-serif text-4xl md:text-5xl font-medium text-black leading-tight">
+                            <h2 className="font-serif text-4xl md:text-5xl font-medium text-brand-header-text leading-tight">
                                 Orsaker till <br /> alkoholberoende
                             </h2>
                             <p className="text-lg text-brand-gray font-sans font-light leading-relaxed">
@@ -104,7 +104,7 @@ export default function VadArAlkoholismPage() {
 
                         {/* Consequences */}
                         <div className="space-y-6 pt-4">
-                            <h2 className="font-serif text-4xl md:text-5xl font-medium text-black leading-tight">
+                            <h2 className="font-serif text-4xl md:text-5xl font-medium text-brand-header-text leading-tight">
                                 Konsekvenser av <br /> alkoholism
                             </h2>
                             <p className="text-lg text-brand-gray font-sans font-light leading-relaxed">
@@ -116,19 +116,19 @@ export default function VadArAlkoholismPage() {
             </section>
 
             {/* Section 3: Treatment & When to Seek Help */}
-            <section className="py-24 px-8 lg:px-20 bg-brand-cream border-t border-brand-navy/10">
+            <section className="py-24 px-8 lg:px-20 bg-brand-section-bg border-t border-brand-navy/10">
                 <div className="max-w-6xl mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24">
-                        <article className="space-y-6 border-l-2 border-brand-navy pl-8">
-                            <h3 className="font-serif text-2xl md:text-3xl font-medium text-black">
+                        <article className="space-y-6 border-l-2 border-brand-navy pl-8 hover-lift">
+                            <h3 className="font-serif text-2xl md:text-3xl font-medium text-brand-header-text">
                                 Är alkoholism behandlingsbart?
                             </h3>
                             <p className="text-lg text-brand-gray font-sans font-light leading-relaxed">
                                 Ja. Alkoholberoende kan behandlas med professionellt stöd. Vanliga metoder är samtalsterapi, gruppbehandling, stödprogram och strukturerad uppföljning. Många upplever stora förbättringar när de får rätt hjälp i tid.
                             </p>
                         </article>
-                        <article className="space-y-6 border-l-2 border-brand-navy pl-8">
-                            <h3 className="font-serif text-2xl md:text-3xl font-medium text-black">
+                        <article className="space-y-6 border-l-2 border-brand-navy pl-8 hover-lift">
+                            <h3 className="font-serif text-2xl md:text-3xl font-medium text-brand-header-text">
                                 När bör man söka hjälp?
                             </h3>
                             <p className="text-lg text-brand-gray font-sans font-light leading-relaxed">

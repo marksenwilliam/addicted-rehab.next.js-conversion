@@ -25,7 +25,7 @@ export default function Header() {
     };
 
     return (
-        <nav className="fixed top-0 w-full z-40 bg-brand-cream/95 backdrop-blur-sm border-b-2 border-brand-navy/10">
+        <nav className="fixed top-0 w-full z-40 bg-brand-header-bg/95 backdrop-blur-sm border-b-2 border-brand-navy/10">
             <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="flex flex-col group">
@@ -89,7 +89,7 @@ export default function Header() {
 
             {/* Mobile Menu Container */}
             {mobileMenuOpen && (
-                <div className="md:hidden bg-brand-cream border-b-2 border-brand-navy/10">
+                <div className="md:hidden bg-brand-header-bg border-b-2 border-brand-navy/10">
                     <div className="flex flex-col p-6 space-y-4 text-center">
                         {navLinks.map((link) => (
                             <Link

@@ -19,7 +19,7 @@ export default function Footer() {
                 </div>
 
                 {/* Right side - Footer Content */}
-                <div className="lg:w-1/2 bg-brand-cream py-12 lg:py-16 flex flex-col">
+                <div className="lg:w-1/2 bg-brand-section-bg py-12 lg:py-16 flex flex-col">
                     <div className="max-w-lg mx-auto px-6 lg:px-12 flex-1">
                         <div className="grid grid-cols-2 gap-8 mb-10">
                             {/* Logo & Description */}

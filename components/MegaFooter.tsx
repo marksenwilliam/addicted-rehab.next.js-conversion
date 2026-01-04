@@ -27,11 +27,14 @@ export default function MegaFooter() {
             {/* Navigation Grid Section */}
             <section>
                 <div className="grid grid-cols-2 lg:grid-cols-5 w-full">
-                    {navCards.map((card) => (
+                    {navCards.map((card, index) => (
                         <Link
                             key={card.href}
                             href={card.href}
-                            className="group relative aspect-[4/3] overflow-hidden"
+                            className={`group relative overflow-hidden ${index === 4
+                                    ? "col-span-2 aspect-[2/1] lg:col-span-1 lg:aspect-[4/3]"
+                                    : "aspect-[4/3]"
+                                }`}
                         >
                             <Image
                                 src={card.image}
@@ -41,7 +44,7 @@ export default function MegaFooter() {
                             />
                             <div className="absolute inset-0 bg-brand-navy/40 group-hover:bg-brand-navy/60 transition-colors duration-300"></div>
                             <div className="absolute inset-0 flex items-center justify-center">
-                                <span className="text-brand-white font-serif text-xl md:text-2xl lg:text-3xl text-center px-4 drop-shadow-lg">
+                                <span className="text-brand-white text-xl md:text-2xl lg:text-3xl text-center px-4 drop-shadow-lg" style={{ fontFamily: 'Epilogue, sans-serif', fontWeight: 600 }}>
                                     {card.label}
                                 </span>
                             </div>
@@ -86,7 +89,7 @@ export default function MegaFooter() {
                                 type="text"
                                 id="footer-name"
                                 placeholder="DITT NAMN"
-                                className="w-full px-5 py-3 bg-brand-navy border-2 border-brand-cream/30 focus:outline-none focus:border-brand-orange text-brand-cream placeholder-brand-cream/20 text-sm font-bold tracking-wide uppercase sketchy-box transition-colors"
+                                className="w-full px-5 py-3 bg-brand-navy border-2 border-brand-cream/30 focus:outline-none focus:border-brand-orange focus:shadow-[0_0_15px_rgba(232,168,56,0.3)] text-brand-cream placeholder-brand-cream/20 text-sm font-bold tracking-wide uppercase sketchy-box transition-all duration-300"
                             />
                         </div>
 
@@ -102,7 +105,7 @@ export default function MegaFooter() {
                                 type="email"
                                 id="footer-email"
                                 placeholder="DIN EMAIL"
-                                className="w-full px-5 py-3 bg-brand-navy border-2 border-brand-cream/30 focus:outline-none focus:border-brand-orange text-brand-cream placeholder-brand-cream/20 text-sm font-bold tracking-wide uppercase sketchy-box transition-colors"
+                                className="w-full px-5 py-3 bg-brand-navy border-2 border-brand-cream/30 focus:outline-none focus:border-brand-orange focus:shadow-[0_0_15px_rgba(232,168,56,0.3)] text-brand-cream placeholder-brand-cream/20 text-sm font-bold tracking-wide uppercase sketchy-box transition-all duration-300"
                             />
                         </div>
 
@@ -118,7 +121,7 @@ export default function MegaFooter() {
                                 id="footer-message"
                                 rows={4}
                                 placeholder="DITT MEDDELANDE..."
-                                className="w-full px-5 py-3 bg-brand-navy border-2 border-brand-cream/30 focus:outline-none focus:border-brand-orange text-brand-cream placeholder-brand-cream/20 text-sm font-bold tracking-wide uppercase sketchy-box transition-colors"
+                                className="w-full px-5 py-3 bg-brand-navy border-2 border-brand-cream/30 focus:outline-none focus:border-brand-orange focus:shadow-[0_0_15px_rgba(232,168,56,0.3)] text-brand-cream placeholder-brand-cream/20 text-sm font-bold tracking-wide uppercase sketchy-box transition-all duration-300"
                             ></textarea>
                         </div>
 

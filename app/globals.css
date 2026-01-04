@@ -1,5 +1,5 @@
 /* Google Fonts - must be first */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&family=Epilogue:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 @import "tailwindcss";
 
@@ -11,22 +11,28 @@
   --brand-peach: #e6c4a8;
   --brand-gray: #4b5563;
   --brand-white: #ffffff;
+  --brand-header-bg: #f2e7df;
+  --brand-section-bg: #f4f0ee;
+  --brand-header-text: #333333;
 }
 
 /* Tailwind v4 Theme Configuration */
 @theme inline {
-  --color-brand-navy: var(--brand-navy);
-  --color-brand-orange: var(--brand-orange);
-  --color-brand-cream: var(--brand-cream);
-  --color-brand-peach: var(--brand-peach);
-  --color-brand-gray: var(--brand-gray);
-  --color-brand-white: var(--brand-white);
+  --color-brand-navy: #0e1626;
+  --color-brand-orange: #d4a373;
+  --color-brand-cream: #fcfbf9;
+  --color-brand-peach: #e6c4a8;
+  --color-brand-gray: #4b5563;
+  --color-brand-white: #ffffff;
+  --color-brand-header-bg: #f2e7df;
+  --color-brand-section-bg: #f4f0ee;
+  --color-brand-header-text: #333333;
 
   --font-sans: "DM Sans", sans-serif;
-  --font-serif: "Playfair Display", serif;
+  --font-serif: "Epilogue", sans-serif;
 
-  --shadow-sketch: 4px 4px 0px 0px var(--brand-navy);
-  --shadow-sketch-hover: 2px 2px 0px 0px var(--brand-navy);
+  --shadow-sketch: 4px 4px 0px 0px #0e1626;
+  --shadow-sketch-hover: 2px 2px 0px 0px #0e1626;
   --shadow-card: 0 4px 20px -2px rgba(14, 22, 38, 0.1);
 }
 
@@ -35,6 +41,40 @@ body {
   background-color: var(--brand-cream);
   color: var(--brand-navy);
   font-family: var(--font-sans);
+}
+
+/* Global Heading Styles - Epilogue 600 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Epilogue", sans-serif !important;
+  font-weight: 600 !important;
+  color: #333333 !important;
+}
+
+/* Override heading color to white on dark navy backgrounds */
+.bg-brand-navy h1,
+.bg-brand-navy h2,
+.bg-brand-navy h3,
+.bg-brand-navy h4,
+.bg-brand-navy h5,
+.bg-brand-navy h6,
+section.bg-brand-navy h1,
+section.bg-brand-navy h2,
+section.bg-brand-navy h3,
+section.bg-brand-navy h4,
+section.bg-brand-navy h5,
+section.bg-brand-navy h6,
+div.bg-brand-navy h1,
+div.bg-brand-navy h2,
+div.bg-brand-navy h3,
+div.bg-brand-navy h4,
+div.bg-brand-navy h5,
+div.bg-brand-navy h6 {
+  color: #ffffff !important;
 }
 
 /* Hand-drawn organic border radius simulation */
@@ -49,6 +89,122 @@ body {
 
 .sketchy-oval {
   border-radius: 50% / 100% 100% 80% 80%;
+}
+
+/* ===== HOVER ANIMATION UTILITIES ===== */
+
+/* Lift effect - subtle upward movement with enhanced shadow */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px -8px rgba(14, 22, 38, 0.15);
+}
+
+/* Scale effect - gentle zoom */
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.03);
+}
+
+/* Glow effect - soft orange glow */
+.hover-glow {
+  transition: box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(212, 163, 115, 0.4);
+}
+
+/* Tilt effect - playful rotation */
+.hover-tilt {
+  transition: transform 0.3s ease;
+}
+
+.hover-tilt:hover {
+  transform: rotate(-2deg);
+}
+
+/* Brighten effect - for images */
+.hover-brighten {
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.hover-brighten:hover {
+  filter: brightness(1.1);
+  transform: scale(1.02);
+}
+
+/* Image zoom effect - zoom within container */
+.hover-zoom {
+  transition: transform 0.5s ease;
+}
+
+.hover-zoom:hover {
+  transform: scale(1.08);
+}
+
+/* Underline grow effect - animated underline from center */
+.hover-underline-grow {
+  position: relative;
+}
+
+.hover-underline-grow::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--brand-orange);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.hover-underline-grow:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Card hover - combined lift and shadow for cards */
+.hover-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -12px rgba(14, 22, 38, 0.2);
+}
+
+/* Portrait hover - for team member images */
+.hover-portrait {
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.hover-portrait:hover {
+  transform: scale(1.02) rotate(-1deg);
+  filter: brightness(1.05);
+}
+
+/* Pulse effect - subtle pulse animation on hover */
+.hover-pulse:hover {
+  animation: pulse 1s ease infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 /* Marker Highlight Effect */
