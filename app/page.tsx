@@ -64,13 +64,13 @@ export default function HomePage() {
           {/* Right: Hero Image Card */}
           <div className="lg:col-span-6 relative flex items-center justify-center lg:justify-end">
             <AnimateOnScroll animation="scale" delay={0.2} className="w-full max-w-2xl">
-              <div className="w-full bg-brand-white border-2 border-brand-navy sketchy-box p-4 shadow-card relative z-10 animate-gentle-twist hover-glow">
+              <div className="w-full bg-brand-white border-2 border-brand-navy sketchy-box p-4 shadow-card relative z-10 animate-gentle-twist">
                 <div className="aspect-[4/3] bg-brand-navy overflow-hidden sketchy-box relative">
                   <Image
                     src="/images/hero-image.jpg"
                     alt="Lugnt hav i Spanien"
                     fill
-                    className="object-cover opacity-90 hover-zoom"
+                    className="object-cover opacity-90"
                   />
                   <div className="absolute bottom-4 right-4 bg-brand-white/90 backdrop-blur px-3 py-1 text-[10px] font-bold uppercase tracking-widest border border-brand-navy shadow-sm">
                     La Marina, Spanien
