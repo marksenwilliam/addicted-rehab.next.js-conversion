@@ -8,9 +8,6 @@ export const metadata: Metadata = {
   title: "Nytt Liv | Addicted Rehab",
   description:
     "Privat rehab & beroendeklinik i Spanien. Individuell behandling för alkoholism och beroende.",
-  icons: {
-    icon: "/images/favicon.png",
-  },
 };
 
 export default function RootLayout({
