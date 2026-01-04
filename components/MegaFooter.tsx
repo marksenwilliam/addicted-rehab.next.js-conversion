@@ -4,14 +4,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
-// Define all available navigation cards
+// Define all available navigation cards with SEO-friendly alt text
 const allNavCards = [
-    { href: "/", label: "Hem", image: "/images/hero-image.jpg", alt: "Hem" },
-    { href: "/var-behandling", label: "Vår Behandling", image: "/images/nav-treatment.jpg", alt: "Vår Behandling" },
-    { href: "/om-oss", label: "Om Oss", image: "/images/nav-about-us.jpg", alt: "Om Oss" },
-    { href: "/vad-ar-alkoholism", label: "Vad är alkoholism?", image: "/images/nav-alcoholism.jpg", alt: "Vad är alkoholism?" },
-    { href: "/berattelser", label: "Berättelser", image: "/images/berattelser-recensioner.jpeg", alt: "Berättelser" },
-    { href: "/blogg", label: "Blogg", image: "https://images.unsplash.com/photo-1496814795703-e5b242546673?w=1600&q=80", alt: "Blogg" },
+    { href: "/", label: "Hem", image: "/images/hero-image.jpg", alt: "Hem - Addicted Rehab privat behandling för alkoholism i Spanien" },
+    { href: "/var-behandling", label: "Vår Behandling", image: "/images/nav-treatment.jpg", alt: "Vår individuella 12-stegsbehandling enligt Minnesotamodellen" },
+    { href: "/om-oss", label: "Om Oss", image: "/images/nav-about-us.jpg", alt: "Möt vårt team av erfarna beroendeterapeuter" },
+    { href: "/vad-ar-alkoholism", label: "Vad är alkoholism?", image: "/images/nav-alcoholism.jpg", alt: "Information om alkoholism, symptom och behandling" },
+    { href: "/berattelser", label: "Berättelser", image: "/images/berattelser-recensioner.jpeg", alt: "Berättelser och recensioner från tidigare klienter" },
+    { href: "/blogg", label: "Blogg", image: "https://images.unsplash.com/photo-1496814795703-e5b242546673?w=1600&q=80", alt: "Bloggartiklar om återhämtning och behandling" },
 ];
 
 export default function MegaFooter() {
@@ -127,7 +127,7 @@ export default function MegaFooter() {
 
                         <div className="md:col-span-2 flex flex-col md:flex-row items-center justify-between gap-6">
                             <button
-                                type="button"
+                                type="submit"
                                 className="w-full md:w-auto bg-brand-orange text-brand-navy px-10 py-4 text-xs font-bold uppercase tracking-widest border-2 border-transparent hover:bg-brand-cream transition-colors sketchy-btn shadow-lg"
                             >
                                 Skicka Meddelande

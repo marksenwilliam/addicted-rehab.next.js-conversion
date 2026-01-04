@@ -1,4 +1,10 @@
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+    title: "Cookiepolicy",
+    description: "Läs om hur Addicted Rehab använder cookies på webbplatsen för att förbättra din upplevelse och analysera trafik.",
+};
 
 export default function CookiesPage() {
     return (

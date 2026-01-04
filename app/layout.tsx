@@ -1,13 +1,91 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import MegaFooter from "@/components/MegaFooter";
 import LatestArticles from "@/components/LatestArticles";
 
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
+
 export const metadata: Metadata = {
-  title: "Nytt Liv | Addicted Rehab",
+  metadataBase: new URL("https://addicted-rehab.se"),
+  title: {
+    default: "Nytt Liv | Addicted Rehab",
+    template: "%s | Addicted Rehab",
+  },
   description:
     "Privat rehab & beroendeklinik i Spanien. Individuell behandling för alkoholism och beroende.",
+  keywords: [
+    "rehab",
+    "alkoholism",
+    "beroende",
+    "behandling",
+    "Spanien",
+    "12-stegsbehandling",
+    "Minnesotamodellen",
+  ],
+  authors: [{ name: "Addicted Rehab" }],
+  creator: "Addicted Rehab",
+  openGraph: {
+    type: "website",
+    locale: "sv_SE",
+    url: "https://addicted-rehab.se",
+    siteName: "Addicted Rehab",
+    title: "Nytt Liv | Addicted Rehab",
+    description:
+      "Privat rehab & beroendeklinik i Spanien. Individuell behandling för alkoholism och beroende.",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Addicted Rehab - Privat rehab i Spanien",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nytt Liv | Addicted Rehab",
+    description:
+      "Privat rehab & beroendeklinik i Spanien. Individuell behandling för alkoholism och beroende.",
+    images: ["/images/og-image.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
+
+// JSON-LD structured data for organization
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  name: "Addicted Rehab",
+  description:
+    "Privat rehab & beroendeklinik i Spanien. Individuell behandling för alkoholism och beroende.",
+  url: "https://addicted-rehab.se",
+  telephone: "+46732520358",
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "ES",
+  },
+  medicalSpecialty: "Addiction Medicine",
+  availableService: {
+    "@type": "MedicalTherapy",
+    name: "12-stegsbehandling enligt Minnesotamodellen",
+    description: "Individuell behandling för alkoholism och beroende",
+  },
 };
 
 export default function RootLayout({
@@ -16,7 +94,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="sv" className="scroll-smooth">
+    <html lang="sv" className={`scroll-smooth ${inter.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+      </head>
       <body className="font-sans antialiased selection:bg-brand-peach selection:text-brand-navy">
         {/* Paper Texture Overlay */}
         <div className="fixed inset-0 pointer-events-none z-50 bg-paper-texture mix-blend-multiply"></div>

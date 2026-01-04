@@ -388,13 +388,67 @@ export async function generateMetadata({
 
     if (!article) {
         return {
-            title: "Artikel hittades inte | Addicted Rehab",
+            title: "Artikel hittades inte",
         };
     }
 
     return {
-        title: `${article.title} | Addicted Rehab`,
+        title: article.title,
         description: article.excerpt,
+        openGraph: {
+            title: article.title,
+            description: article.excerpt,
+            type: "article",
+            publishedTime: article.date,
+            authors: ["Addicted Rehab"],
+            images: [
+                {
+                    url: article.image,
+                    width: 1600,
+                    height: 900,
+                    alt: article.title,
+                },
+            ],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: article.title,
+            description: article.excerpt,
+            images: [article.image],
+        },
+    };
+}
+
+// Generate Article JSON-LD schema
+function generateArticleSchema(slug: string, article: typeof articles[string]) {
+    return {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: article.title,
+        description: article.excerpt,
+        image: article.image,
+        datePublished: article.date,
+        dateModified: article.date,
+        author: {
+            "@type": "Organization",
+            name: "Addicted Rehab",
+            url: "https://addicted-rehab.se",
+        },
+        publisher: {
+            "@type": "Organization",
+            name: "Addicted Rehab",
+            url: "https://addicted-rehab.se",
+            logo: {
+                "@type": "ImageObject",
+                url: "https://addicted-rehab.se/images/logo-header-footer.png",
+            },
+        },
+        mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": `https://addicted-rehab.se/blogg/${slug}`,
+        },
+        articleSection: article.category,
+        inLanguage: "sv-SE",
     };
 }
 
@@ -416,8 +470,16 @@ export default async function ArticlePage({
         .slice(0, 2)
         .map(([key, value]) => ({ slug: key, ...value }));
 
+    // Generate article schema
+    const articleSchema = generateArticleSchema(slug, article);
+
     return (
         <>
+            {/* Article JSON-LD Schema */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+            />
             {/* Hero Section */}
             <header className="pt-32 pb-16 bg-brand-cream relative overflow-hidden">
                 <div className="max-w-4xl mx-auto px-6 relative z-10">
