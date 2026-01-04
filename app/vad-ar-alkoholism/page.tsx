@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -15,123 +16,145 @@ export default function VadArAlkoholismPage() {
                     <span className="font-bold text-xs tracking-widest text-brand-orange uppercase mb-4 block">
                         Kunskap
                     </span>
-                    <h1 className="font-serif text-5xl md:text-7xl text-brand-navy mb-8 leading-tight">
+                    <h1 className="font-serif text-5xl md:text-7xl text-black mb-8 leading-tight">
                         Vad är <span className="marker-highlight px-2">alkoholism?</span>
                     </h1>
-                    <p className="font-sans text-lg md:text-xl text-brand-gray leading-relaxed max-w-2xl mx-auto">
+                    <p className="font-sans text-lg text-brand-gray font-light leading-relaxed max-w-2xl mx-auto">
                         Alkoholism är en kronisk sjukdom som påverkar hjärnans belöningssystem. Det handlar inte om
                         viljestyrka eller moral – det är en medicinsk tillstånd som kräver professionell behandling.
                     </p>
                 </div>
             </header>
 
-            {/* Symptoms Section */}
-            <section className="py-24 bg-brand-white">
-                <div className="container mx-auto px-6 max-w-4xl">
-                    <h2 className="font-serif text-4xl text-brand-navy mb-12 text-center">
-                        Tecken på alkoholberoende
-                    </h2>
-
-                    <div className="grid md:grid-cols-2 gap-8">
-                        {[
-                            "Svårighet att begränsa drickandet",
-                            "Behov av större mängder för samma effekt",
-                            "Abstinenssymptom vid försök att sluta",
-                            "Fortsatt drickande trots negativa konsekvenser",
-                            "Att ge upp aktiviteter för alkoholens skull",
-                            "Stark längtan eller sug efter alkohol",
-                            "Misslyckas med att fullfölja åtaganden",
-                            "Drickande i riskfyllda situationer",
-                        ].map((symptom, i) => (
-                            <div key={i} className="flex items-start gap-4 p-6 bg-brand-cream/50 rounded-lg border-l-4 border-brand-orange">
-                                <div className="w-8 h-8 bg-brand-navy text-brand-orange rounded-full flex items-center justify-center font-bold text-sm shrink-0">
-                                    {i + 1}
-                                </div>
-                                <p className="text-brand-gray">{symptom}</p>
-                            </div>
-                        ))}
+            {/* Section 1: What is Alcoholism + Symptoms */}
+            <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh] bg-brand-cream">
+                <div className="flex flex-col justify-center px-8 py-16 lg:px-20 lg:py-24 order-2 lg:order-1">
+                    <div className="max-w-xl mx-auto lg:mx-0 space-y-8">
+                        <h2 className="font-serif text-5xl md:text-6xl font-medium text-black leading-tight tracking-tight">
+                            Vad är <br />
+                            <span className="text-black/80">alkoholism</span>
+                        </h2>
+                        <div className="space-y-4">
+                            <p className="text-lg text-brand-gray font-sans font-light leading-relaxed">
+                                Alkoholism, eller alkoholberoende, är en kronisk sjukdom som gör att en person förlorar kontrollen över sitt drickande. Det handlar inte bara om mängden alkohol utan om ett starkt sug, tvångsmässiga beteenden och fortsatta problem trots negativa konsekvenser.
+                            </p>
+                            <p className="text-lg text-brand-gray font-sans font-light leading-relaxed">
+                                Alkoholism påverkar både kroppen och psyket och kan leda till allvarliga hälsorisker och sociala svårigheter.
+                            </p>
+                        </div>
+                        <div className="pt-8 space-y-6">
+                            <h3 className="font-serif text-4xl md:text-5xl font-medium text-black leading-tight">
+                                Vanliga symtom på <br /> alkoholism
+                            </h3>
+                            <p className="text-lg text-brand-navy font-sans font-medium leading-relaxed">
+                                Att känna igen symtomen i tid är avgörande för att kunna söka rätt hjälp. Vanliga tecken är:
+                            </p>
+                            <ul className="space-y-3">
+                                {[
+                                    "Starkt behov eller sug efter alkohol",
+                                    "Svårt att sluta dricka när man väl har börjat",
+                                    "Behov av större mängder alkohol för att uppnå samma effekt",
+                                    "Abstinenssymtom som oro, svettningar, irritabilitet eller skakningar",
+                                    "Fortsatt användning trots problem i arbete, relationer eller hälsa",
+                                ].map((symptom, i) => (
+                                    <li key={i} className="flex items-start gap-3 text-brand-gray font-sans font-light">
+                                        <span className="text-lg mt-0.5 text-brand-navy font-bold">✕</span>
+                                        {symptom}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
+                </div>
+                <div className="relative order-1 lg:order-2 h-96 lg:h-auto overflow-hidden bg-brand-cream">
+                    <Image
+                        src="/images/8eec4807-8c8b-4a0f-afbf-9a6200c0fa6b.jpeg"
+                        alt="Man sitting at a table looking distressed with bottles, artistic illustration style"
+                        fill
+                        quality={100}
+                        priority
+                        className="object-cover opacity-90 hover:scale-105 transition-transform duration-700 ease-in-out"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-brand-cream/20 pointer-events-none"></div>
+                </div>
+            </section>
 
-                    <div className="mt-12 p-8 bg-brand-navy text-brand-cream rounded-2xl text-center">
-                        <p className="font-serif text-xl italic mb-4">
-                            &quot;Känner du igen dig i flera av dessa punkter? Du är inte ensam, och det finns hjälp att få.&quot;
-                        </p>
+            {/* Section 2: Causes + Consequences */}
+            <section className="grid grid-cols-1 lg:grid-cols-2 min-h-screen bg-brand-cream">
+                <div className="relative h-96 lg:h-auto overflow-hidden bg-brand-cream">
+                    <Image
+                        src="/images/transparent-bild.png"
+                        alt="Sketch illustration of a person hiding face on table with bottles"
+                        fill
+                        quality={100}
+                        className="object-cover hover:scale-105 transition-transform duration-700 ease-in-out"
+                    />
+                </div>
+                <div className="flex flex-col justify-center px-8 py-16 lg:px-20 lg:py-24">
+                    <div className="max-w-xl mx-auto lg:mx-0 space-y-12">
+                        {/* Causes */}
+                        <div className="space-y-6">
+                            <h2 className="font-serif text-4xl md:text-5xl font-medium text-black leading-tight">
+                                Orsaker till <br /> alkoholberoende
+                            </h2>
+                            <p className="text-lg text-brand-gray font-sans font-light leading-relaxed">
+                                Alkoholism utvecklas oftast av flera faktorer i kombination. Genetiska anlag, stress, ångest, uppväxtmiljö och sociala sammanhang kan alla bidra. För vissa fungerar alkohol som ett sätt att hantera svåra känslor, medan andra påverkas starkare biologiskt av alkoholens effekter.
+                            </p>
+                        </div>
+
+                        {/* Consequences */}
+                        <div className="space-y-6 pt-4">
+                            <h2 className="font-serif text-4xl md:text-5xl font-medium text-black leading-tight">
+                                Konsekvenser av <br /> alkoholism
+                            </h2>
+                            <p className="text-lg text-brand-gray font-sans font-light leading-relaxed">
+                                Utan behandling kan alkoholberoende leda till fysiska skador som leversjukdom, högt blodtryck och hjärtproblem. Psykiska konsekvenser som depression, ångest och relationsproblem är också vanliga. Ju tidigare man söker hjälp, desto större är chansen till återhämtning.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Section 3: Treatment & When to Seek Help */}
+            <section className="py-24 px-8 lg:px-20 bg-brand-cream border-t border-brand-navy/10">
+                <div className="max-w-6xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24">
+                        <article className="space-y-6 border-l-2 border-brand-navy pl-8">
+                            <h3 className="font-serif text-2xl md:text-3xl font-medium text-black">
+                                Är alkoholism behandlingsbart?
+                            </h3>
+                            <p className="text-lg text-brand-gray font-sans font-light leading-relaxed">
+                                Ja. Alkoholberoende kan behandlas med professionellt stöd. Vanliga metoder är samtalsterapi, gruppbehandling, stödprogram och strukturerad uppföljning. Många upplever stora förbättringar när de får rätt hjälp i tid.
+                            </p>
+                        </article>
+                        <article className="space-y-6 border-l-2 border-brand-navy pl-8">
+                            <h3 className="font-serif text-2xl md:text-3xl font-medium text-black">
+                                När bör man söka hjälp?
+                            </h3>
+                            <p className="text-lg text-brand-gray font-sans font-light leading-relaxed">
+                                Om alkoholen börjar påverka din vardag, relationer eller hälsa är det viktigt att agera tidigt. Professionell behandling kan hjälpa dig att förstå orsakerna bakom beroendet, hantera suget och återfå kontrollen över livet.
+                            </p>
+                        </article>
+                    </div>
+                    <div className="mt-24 text-center">
                         <Link
                             href="#contact"
-                            className="text-brand-orange font-bold uppercase tracking-widest hover:underline"
+                            className="sketchy-btn bg-brand-orange hover:bg-brand-orange/90 text-brand-navy font-bold text-xs uppercase tracking-widest px-12 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 inline-block"
                         >
-                            Kontakta oss för ett första samtal →
+                            Kontakta Oss
                         </Link>
-                    </div>
-                </div>
-            </section>
-
-            {/* Causes Section */}
-            <section className="py-24 bg-brand-cream border-y-2 border-brand-navy/10">
-                <div className="container mx-auto px-6 max-w-4xl">
-                    <h2 className="font-serif text-4xl text-brand-navy mb-8 text-center">
-                        Varför utvecklar man alkoholism?
-                    </h2>
-                    <p className="text-brand-gray text-lg text-center mb-12 max-w-2xl mx-auto">
-                        Alkoholism uppstår genom ett komplext samspel mellan genetiska, psykologiska och sociala faktorer.
-                    </p>
-
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {[
-                            {
-                                title: "Genetik",
-                                desc: "Forskning visar att ärftlighet spelar en viktig roll. Har du nära släktingar med alkoholproblem ökar risken.",
-                            },
-                            {
-                                title: "Psykologi",
-                                desc: "Ångest, depression, trauma och stress kan leda till självmedicinering med alkohol som tillfällig lindring.",
-                            },
-                            {
-                                title: "Miljö",
-                                desc: "Uppväxtmiljö, socialt umgänge och kulturella normer påverkar vår relation till alkohol.",
-                            },
-                        ].map((item, i) => (
-                            <div key={i} className="bg-brand-white p-8 border-2 border-brand-navy sketchy-box shadow-sketch">
-                                <h3 className="font-serif text-2xl text-brand-navy mb-4">{item.title}</h3>
-                                <p className="text-brand-gray leading-relaxed">{item.desc}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Consequences Section */}
-            <section className="py-24 bg-brand-white">
-                <div className="container mx-auto px-6 max-w-4xl">
-                    <h2 className="font-serif text-4xl text-brand-navy mb-8 text-center">
-                        Konsekvenser av obehandlat beroende
-                    </h2>
-
-                    <div className="prose prose-lg prose-gray mx-auto">
-                        <p>
-                            Alkoholberoende som inte behandlas kan leda till allvarliga konsekvenser för både kropp och sinne.
-                            Fysiskt kan det orsaka leverskador, hjärt-kärlsjukdomar och neurologiska problem. Psykiskt ökar
-                            risken för depression, ångest och kognitiva svårigheter.
-                        </p>
-                        <p>
-                            Socialt påverkas relationer, arbete och ekonomi negativt. Många upplever isolering och skam som
-                            i sin tur förstärker beroendet. Det är en ond cirkel som är svår att bryta på egen hand.
-                        </p>
-                    </div>
-
-                    <div className="mt-12 bg-brand-orange/10 border-l-4 border-brand-orange p-8 rounded-r-xl">
-                        <p className="font-serif text-xl text-brand-navy italic">
-                            &quot;Det viktigaste steget är att erkänna att man behöver hjälp. Därifrån kan resan mot ett friskt liv börja.&quot;
+                        <p className="mt-4 text-sm text-brand-gray font-sans font-light">
+                            Vi finns här för att lyssna och hjälpa dig vidare.
                         </p>
                     </div>
                 </div>
             </section>
 
             {/* Treatment Info Section */}
-            <section className="py-24 bg-brand-navy text-brand-cream">
-                <div className="container mx-auto px-6 max-w-4xl text-center">
+            <section className="pt-24 pb-0 bg-brand-navy text-brand-cream">
+                <div className="container mx-auto px-6 max-w-4xl text-center pb-24">
                     <h2 className="font-serif text-4xl md:text-5xl mb-8">Det finns en väg framåt</h2>
-                    <p className="text-xl text-brand-cream/80 mb-12 max-w-2xl mx-auto">
+                    <p className="text-xl text-brand-cream/80 font-sans font-light mb-12 max-w-2xl mx-auto leading-relaxed">
                         Med rätt behandling och stöd kan du återta kontrollen över ditt liv. På Addicted Rehab erbjuder vi
                         individuell behandling som är anpassad efter just dina behov.
                     </p>
@@ -139,13 +162,13 @@ export default function VadArAlkoholismPage() {
                     <div className="flex flex-wrap justify-center gap-6">
                         <Link
                             href="/var-behandling"
-                            className="sketchy-btn bg-brand-orange text-brand-navy border-2 border-brand-orange px-8 py-4 font-bold uppercase tracking-widest hover:bg-brand-cream transition-colors shadow-sketch"
+                            className="sketchy-btn bg-brand-orange text-brand-navy border-2 border-brand-orange px-8 py-4 font-bold text-xs uppercase tracking-widest hover:bg-brand-cream transition-colors shadow-sketch"
                         >
                             Läs om vår behandling
                         </Link>
                         <Link
                             href="/berattelser"
-                            className="sketchy-btn bg-transparent text-brand-cream border-2 border-brand-cream px-8 py-4 font-bold uppercase tracking-widest hover:bg-brand-cream hover:text-brand-navy transition-colors"
+                            className="sketchy-btn bg-transparent text-brand-cream border-2 border-brand-cream px-8 py-4 font-bold text-xs uppercase tracking-widest hover:bg-brand-cream hover:text-brand-navy transition-colors"
                         >
                             Läs andras berättelser
                         </Link>

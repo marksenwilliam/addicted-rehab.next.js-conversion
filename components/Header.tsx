@@ -10,6 +10,7 @@ const navLinks = [
     { href: "/var-behandling", label: "Vår Behandling" },
     { href: "/vad-ar-alkoholism", label: "Vad är alkoholism?" },
     { href: "/berattelser", label: "Berättelser & Recensioner" },
+    { href: "/blogg", label: "Blogg" },
 ];
 
 export default function Header() {
@@ -48,8 +49,8 @@ export default function Header() {
                             key={link.href}
                             href={link.href}
                             className={`text-xs font-bold tracking-widest uppercase transition-colors ${pathname === link.href
-                                    ? "text-brand-orange"
-                                    : "text-brand-navy hover:text-brand-orange"
+                                ? "text-brand-orange"
+                                : "text-brand-navy hover:text-brand-orange"
                                 }`}
                         >
                             {link.label}
@@ -96,8 +97,8 @@ export default function Header() {
                                 href={link.href}
                                 onClick={() => setMobileMenuOpen(false)}
                                 className={`text-sm font-bold tracking-widest uppercase ${pathname === link.href
-                                        ? "text-brand-orange"
-                                        : "text-brand-navy hover:text-brand-orange"
+                                    ? "text-brand-orange"
+                                    : "text-brand-navy hover:text-brand-orange"
                                     }`}
                             >
                                 {link.label}

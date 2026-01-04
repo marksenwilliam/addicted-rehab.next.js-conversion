@@ -11,32 +11,33 @@ const allNavCards = [
     { href: "/om-oss", label: "Om Oss", image: "/images/nav-about-us.jpg", alt: "Om Oss" },
     { href: "/vad-ar-alkoholism", label: "Vad är alkoholism?", image: "/images/nav-alcoholism.jpg", alt: "Vad är alkoholism?" },
     { href: "/berattelser", label: "Berättelser", image: "/images/berattelser-recensioner.jpeg", alt: "Berättelser" },
+    { href: "/blogg", label: "Blogg", image: "https://images.unsplash.com/photo-1496814795703-e5b242546673?w=1600&q=80", alt: "Blogg" },
 ];
 
 export default function MegaFooter() {
     const pathname = usePathname();
 
-    // Filter out the current page and get exactly 4 cards
+    // Filter out the current page and get exactly 5 cards
     const navCards = allNavCards
         .filter(card => card.href !== pathname)
-        .slice(0, 4);
+        .slice(0, 5);
 
     return (
         <footer className="relative">
             {/* Navigation Grid Section */}
-            <section className="bg-brand-white border-t-2 border-brand-navy/10">
-                <div className="grid grid-cols-2 lg:grid-cols-4 w-full">
+            <section>
+                <div className="grid grid-cols-2 lg:grid-cols-5 w-full">
                     {navCards.map((card) => (
-                        <Link 
-                            key={card.href} 
-                            href={card.href} 
+                        <Link
+                            key={card.href}
+                            href={card.href}
                             className="group relative aspect-[4/3] overflow-hidden"
                         >
-                            <Image 
-                                src={card.image} 
-                                alt={card.alt} 
-                                fill 
-                                className="object-cover transition-transform duration-500 group-hover:scale-110" 
+                            <Image
+                                src={card.image}
+                                alt={card.alt}
+                                fill
+                                className="object-cover transition-transform duration-500 group-hover:scale-110"
                             />
                             <div className="absolute inset-0 bg-brand-navy/40 group-hover:bg-brand-navy/60 transition-colors duration-300"></div>
                             <div className="absolute inset-0 flex items-center justify-center">

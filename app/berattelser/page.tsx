@@ -123,8 +123,8 @@ export default function BerattelerPage() {
             </section>
 
             {/* CTA Section */}
-            <section className="py-24 bg-brand-navy text-brand-cream text-center">
-                <div className="container mx-auto px-6 max-w-3xl">
+            <section className="pt-24 pb-0 bg-brand-navy text-brand-cream text-center">
+                <div className="container mx-auto px-6 max-w-3xl pb-24">
                     <h2 className="font-serif text-4xl md:text-5xl mb-6">Din berättelse kan börja idag</h2>
                     <p className="text-xl text-brand-cream/80 mb-12">
                         Vi finns här för att hjälpa dig ta det första steget mot ett nytt liv.

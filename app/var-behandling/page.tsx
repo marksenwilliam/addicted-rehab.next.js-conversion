@@ -129,17 +129,7 @@ export default function VarBehandlingPage() {
                                 </blockquote>
                             </div>
 
-                            <div className="pt-4">
-                                <Link
-                                    href="/var-behandling"
-                                    className="group flex items-center gap-3 text-brand-white font-medium hover:text-brand-orange transition-colors duration-300"
-                                >
-                                    <span>Läs mer om vårt arbetssätt</span>
-                                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                        <path d="M5 12h14M12 5l7 7-7 7" />
-                                    </svg>
-                                </Link>
-                            </div>
+
                         </div>
 
                         {/* Right Column - Cards */}
@@ -321,15 +311,15 @@ export default function VarBehandlingPage() {
                     <div className="mt-20 max-w-xl mx-auto">
                         <div className="bg-brand-white border-2 border-brand-navy/10 sketchy-box p-8 md:p-12 text-center relative overflow-hidden shadow-sketch">
                             {/* Dotted pattern background */}
-                            <div 
-                                className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none" 
+                            <div
+                                className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none"
                                 style={{ backgroundImage: 'radial-gradient(#0e1626 1px, transparent 1px)', backgroundSize: '20px 20px' }}
                             ></div>
-                            
+
                             <h3 className="text-xl font-medium text-brand-navy mb-8 relative z-10 font-serif italic">
                                 Ring oss idag, så kan vi prata om din situation
                             </h3>
-                            
+
                             <a
                                 href="tel:0732520358"
                                 className="inline-flex items-center justify-center gap-3 bg-brand-orange text-brand-navy font-bold py-4 px-10 text-lg sketchy-btn border-2 border-brand-navy shadow-sketch hover:shadow-sketch-hover hover:translate-x-[-2px] hover:translate-y-[-2px] relative z-10 group transition-all"
