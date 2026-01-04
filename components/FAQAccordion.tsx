@@ -227,9 +227,12 @@ export default function FAQSection() {
                     />
                 </div>
 
-                <p className="text-center text-xs text-brand-gray mt-12 italic">
-                    Svar på fler frågor fås vid kontakt.
-                </p>
+                <div className="text-center mt-20 relative">
+                    <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-64 h-12 bg-brand-orange/10 -rotate-1 rounded-full blur-xl pointer-events-none"></div>
+                    <p className="relative font-serif text-2xl md:text-3xl text-brand-navy italic">
+                        Svar på fler frågor fås vid <Link href="#contact" className="underline decoration-2 decoration-brand-orange underline-offset-4 hover:text-brand-orange transition-colors">kontakt.</Link>
+                    </p>
+                </div>
             </div>
         </section>
     );

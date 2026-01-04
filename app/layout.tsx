@@ -2,11 +2,15 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import MegaFooter from "@/components/MegaFooter";
+import LatestArticles from "@/components/LatestArticles";
 
 export const metadata: Metadata = {
   title: "Nytt Liv | Addicted Rehab",
   description:
     "Privat rehab & beroendeklinik i Spanien. Individuell behandling för alkoholism och beroende.",
+  icons: {
+    icon: "/images/favicon.png",
+  },
 };
 
 export default function RootLayout({
@@ -22,6 +26,7 @@ export default function RootLayout({
 
         <Header />
         <main>{children}</main>
+        <LatestArticles />
         <MegaFooter />
       </body>
     </html>

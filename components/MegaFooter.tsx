@@ -32,8 +32,8 @@ export default function MegaFooter() {
                             key={card.href}
                             href={card.href}
                             className={`group relative overflow-hidden ${index === 4
-                                    ? "col-span-2 aspect-[2/1] lg:col-span-1 lg:aspect-[4/3]"
-                                    : "aspect-[4/3]"
+                                ? "col-span-2 aspect-[2/1] lg:col-span-1 lg:aspect-[4/3]"
+                                : "aspect-[4/3]"
                                 }`}
                         >
                             <Image
@@ -169,13 +169,13 @@ export default function MegaFooter() {
                         <div className="grid grid-cols-2 gap-8 mb-10">
                             {/* Logo & Description */}
                             <div className="col-span-2 space-y-4">
-                                <Link href="/" className="flex items-center gap-2">
-                                    <div className="w-6 h-6 bg-brand-orange rounded-full flex items-center justify-center text-white font-serif font-bold text-xs border border-white/30">
-                                        N
-                                    </div>
-                                    <span className="font-serif font-bold text-lg text-brand-navy tracking-tight">
-                                        Nytt Liv
-                                    </span>
+                                <Link href="/" className="inline-block relative w-48 h-16">
+                                    <Image
+                                        src="/images/logo-header-footer.png"
+                                        alt="Nytt Liv - Addicted Rehab"
+                                        fill
+                                        className="object-contain object-left"
+                                    />
                                 </Link>
                                 <p className="text-xs font-sans text-brand-gray max-w-sm leading-relaxed">
                                     Privat rehab &amp; beroendeklinik i Spanien.
@@ -216,10 +216,34 @@ export default function MegaFooter() {
                                     </li>
                                     <li>
                                         <Link
+                                            href="/vad-ar-alkoholism"
+                                            className="hover:text-brand-orange hover:underline decoration-wavy underline-offset-4 decoration-brand-orange transition-all"
+                                        >
+                                            Vad är alkoholism?
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link
+                                            href="/vanliga-fragor"
+                                            className="hover:text-brand-orange hover:underline decoration-wavy underline-offset-4 decoration-brand-orange transition-all"
+                                        >
+                                            Vanliga Frågor
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link
                                             href="/berattelser"
                                             className="hover:text-brand-orange hover:underline decoration-wavy underline-offset-4 decoration-brand-orange transition-all"
                                         >
                                             Berättelser
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link
+                                            href="/blogg"
+                                            className="hover:text-brand-orange hover:underline decoration-wavy underline-offset-4 decoration-brand-orange transition-all"
+                                        >
+                                            Blogg
                                         </Link>
                                     </li>
                                 </ul>

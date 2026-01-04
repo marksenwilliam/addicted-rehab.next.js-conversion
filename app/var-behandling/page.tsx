@@ -359,7 +359,7 @@ export default function VarBehandlingPage() {
                         </div>
 
                         {/* Upplägg */}
-                        <div>
+                        <div className="mt-8 md:mt-0">
                             <h2 className="font-serif text-3xl text-brand-header-text mb-6 flex items-center gap-3">
                                 <span className="w-8 h-8 bg-brand-orange text-brand-navy rounded-full flex items-center justify-center text-sm font-bold">2</span>
                                 Upplägg
