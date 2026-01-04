@@ -43,12 +43,12 @@ export default function Header() {
                 </Link>
 
                 {/* Desktop Nav - Absolute Centered */}
-                <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-8">
+                <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-4 lg:gap-8">
                     {navLinks.map((link) => (
                         <Link
                             key={link.href}
                             href={link.href}
-                            className={`text-xs font-bold tracking-widest uppercase transition-colors ${pathname === link.href
+                            className={`text-xs font-bold tracking-widest uppercase transition-colors whitespace-nowrap ${pathname === link.href
                                 ? "text-brand-orange"
                                 : "text-brand-navy hover:text-brand-orange"
                                 }`}

@@ -96,6 +96,29 @@ export default function RootLayout({
   return (
     <html lang="sv" className={`scroll-smooth ${inter.variable}`}>
       <head>
+        {/* Cookiebot */}
+        <script
+          id="Cookiebot"
+          src="https://consent.cookiebot.com/uc.js"
+          data-cbid="322f89ec-5b98-45b0-9790-7ebb24f693b5"
+          data-blockingmode="auto"
+          type="text/javascript"
+        />
+        {/* Google Analytics */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-GVBPQ387CE"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-GVBPQ387CE');
+            `,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

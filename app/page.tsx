@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import AnimateOnScroll, { StaggerContainer, StaggerItem } from "@/components/AnimateOnScroll";
+import ContactSection from "@/components/ContactSection";
 
 export default function HomePage() {
   return (
@@ -451,6 +452,9 @@ export default function HomePage() {
           </AnimateOnScroll>
         </div>
       </section>
+
+      {/* Contact Section */}
+      <ContactSection />
     </>
   );
 }
