@@ -1,4 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
+import { Resend } from "resend";
+
+// Initialize Resend with API key
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+// Email recipient
+const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "info@addicted-rehab.se";
 
 // Simple in-memory rate limiting (resets on server restart)
 // For production with multiple instances, use Redis instead
@@ -113,39 +120,39 @@ export async function POST(request: NextRequest) {
             );
         }
 
-        // Log successful submission (for now)
-        console.log("Contact form submission:", {
-            name,
-            email,
-            message: message.substring(0, 50) + "...",
-            ip,
-            timestamp: new Date().toISOString(),
+        // Send email via Resend
+        const { data, error } = await resend.emails.send({
+            from: "Addicted Rehab <onboarding@resend.dev>",
+            to: [CONTACT_EMAIL],
+            subject: `Nytt meddelande från ${name}`,
+            html: `
+                <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+                    <h2 style="color: #1a365d; border-bottom: 2px solid #e8a838; padding-bottom: 10px;">Nytt meddelande från webbplatsen</h2>
+                    <div style="background-color: #f7f7f7; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                        <p style="margin: 10px 0;"><strong style="color: #1a365d;">Namn:</strong> ${name}</p>
+                        <p style="margin: 10px 0;"><strong style="color: #1a365d;">E-post:</strong> <a href="mailto:${email}" style="color: #e8a838;">${email}</a></p>
+                    </div>
+                    <div style="background-color: #1a365d; color: #fff; padding: 20px; border-radius: 8px;">
+                        <h3 style="color: #e8a838; margin-top: 0;">Meddelande:</h3>
+                        <p style="white-space: pre-wrap; line-height: 1.6;">${message}</p>
+                    </div>
+                    <p style="color: #666; font-size: 12px; margin-top: 20px; text-align: center;">
+                        Detta meddelande skickades via kontaktformuläret på addicted-rehab.se
+                    </p>
+                </div>
+            `,
+            replyTo: email,
         });
 
-        // TODO: Add your email sending logic here
-        // Example with Resend:
-        // const { data, error } = await resend.emails.send({
-        //   from: "Addicted Rehab <no-reply@addicted-rehab.se>",
-        //   to: ["your-email@example.com"],
-        //   subject: `Nytt meddelande från ${name}`,
-        //   html: `
-        //     <h2>Nytt meddelande från webbplatsen</h2>
-        //     <p><strong>Namn:</strong> ${name}</p>
-        //     <p><strong>Email:</strong> ${email}</p>
-        //     <hr />
-        //     <p><strong>Meddelande:</strong></p>
-        //     <p>${message.replace(/\n/g, "<br />")}</p>
-        //   `,
-        //   replyTo: email,
-        // });
-        //
-        // if (error) {
-        //   console.error("Email error:", error);
-        //   return NextResponse.json(
-        //     { error: "Kunde inte skicka meddelandet" },
-        //     { status: 500 }
-        //   );
-        // }
+        if (error) {
+            console.error("Email error:", error);
+            return NextResponse.json(
+                { error: "Kunde inte skicka meddelandet. Försök igen senare." },
+                { status: 500 }
+            );
+        }
+
+        console.log("Email sent successfully:", data);
 
         return NextResponse.json({ success: true });
     } catch (error) {
