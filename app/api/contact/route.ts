@@ -1,8 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
-// Initialize Resend with API key
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Lazy initialization of Resend client (initialized on first request, not at build time)
+let resend: Resend | null = null;
+
+function getResendClient(): Resend {
+    if (!resend) {
+        resend = new Resend(process.env.RESEND_API_KEY);
+    }
+    return resend;
+}
 
 // Email recipient
 const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "info@addicted-rehab.se";
@@ -121,7 +128,7 @@ export async function POST(request: NextRequest) {
         }
 
         // Send email via Resend
-        const { data, error } = await resend.emails.send({
+        const { data, error } = await getResendClient().emails.send({
             from: "Addicted Rehab <onboarding@resend.dev>",
             to: [CONTACT_EMAIL],
             subject: `Nytt meddelande från ${name}`,
