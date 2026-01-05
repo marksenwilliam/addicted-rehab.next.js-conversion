@@ -80,8 +80,9 @@ export async function POST(request: NextRequest) {
             return NextResponse.json({ success: true });
         }
 
-        // Bot Protection Layer 3: Verify Turnstile token (skip if timeout-fallback)
-        if (turnstileToken && turnstileToken !== "timeout-fallback") {
+        // Bot Protection Layer 3: Verify Turnstile token (skip if timeout-fallback or no secret key)
+        const turnstileSecretKey = process.env.TURNSTILE_SECRET_KEY;
+        if (turnstileToken && turnstileToken !== "timeout-fallback" && turnstileSecretKey) {
             const turnstileResponse = await fetch(
                 "https://challenges.cloudflare.com/turnstile/v0/siteverify",
                 {
@@ -90,7 +91,7 @@ export async function POST(request: NextRequest) {
                         "Content-Type": "application/json",
                     },
                     body: JSON.stringify({
-                        secret: process.env.TURNSTILE_SECRET_KEY,
+                        secret: turnstileSecretKey,
                         response: turnstileToken,
                         remoteip: ip,
                     }),
@@ -107,8 +108,8 @@ export async function POST(request: NextRequest) {
                 );
             }
         }
-        // If turnstileToken is "timeout-fallback" or missing, we still allow submission
-        // because honeypot, rate limiting, and time check provide baseline protection
+        // If turnstileToken is "timeout-fallback", missing, or no secret key configured,
+        // we still allow submission because honeypot, rate limiting, and time check provide baseline protection
 
         // Validate required fields
         if (!name || !email || !message) {
