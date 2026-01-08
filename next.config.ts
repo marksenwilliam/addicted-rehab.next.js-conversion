@@ -16,6 +16,30 @@ const nextConfig: NextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384, 512, 1024],
   },
+  async redirects() {
+    return [
+      {
+        source: '/alkoholmissbruk',
+        destination: '/kontakt',
+        permanent: true,
+      },
+      {
+        source: '/omoss',
+        destination: '/om-oss',
+        permanent: true,
+      },
+      {
+        source: '/Behandling-Alkoholism',
+        destination: '/vad-ar-alkoholism',
+        permanent: true,
+      },
+      {
+        source: '/behandling-av-alkoholmissbruk',
+        destination: '/var-behandling',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
