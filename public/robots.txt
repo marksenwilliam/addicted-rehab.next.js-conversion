@@ -1,0 +1,16 @@
+# Addicted Rehab - robots.txt
+# https://addicted-rehab.se
+
+User-agent: *
+Allow: /
+
+# Allow Googlebot-Image to access all images including favicons
+User-agent: Googlebot-Image
+Allow: /images/
+
+# Disallow internal Next.js paths
+Disallow: /_next/
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://addicted-rehab.se/sitemap.xml

@@ -65,6 +65,39 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  icons: {
+    icon: [
+      {
+        url: "https://addicted-rehab.se/images/favicon-48x48.png",
+        sizes: "48x48",
+        type: "image/png",
+      },
+      {
+        url: "https://addicted-rehab.se/images/favicon-96x96.png",
+        sizes: "96x96",
+        type: "image/png",
+      },
+      {
+        url: "https://addicted-rehab.se/images/favicon-144x144.png",
+        sizes: "144x144",
+        type: "image/png",
+      },
+      {
+        url: "https://addicted-rehab.se/images/favicon-512x512.png",
+        sizes: "512x512",
+        type: "image/png",
+      },
+    ],
+    shortcut: {
+      url: "https://addicted-rehab.se/images/favicon-48x48.png",
+      type: "image/png",
+    },
+    apple: {
+      url: "https://addicted-rehab.se/images/favicon-144x144.png",
+      sizes: "144x144",
+      type: "image/png",
+    },
+  },
 };
 
 // JSON-LD structured data for organization
